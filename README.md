@@ -14,7 +14,3 @@ Welcome to my portfolio website! Here, you'll find a showcase of my latest proje
 ![](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
 
 ---
-
-### Deployment:
-
-[![Netlify Status](https://api.netlify.com/api/v1/badges/777f133a-ff28-4c42-af09-1e296f742d71/deploy-status)](https://app.netlify.com/sites/anish-sahoo-portfolio/deploys)
