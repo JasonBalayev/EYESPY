@@ -1,6 +1,6 @@
 # Jason's Portfolio
 
-##👋 Hi there! This repository, jasonbalayev.dev, provides the source code for my personal portfolio website. It's designed to showcase my future and curent projects, skills, and experiences within Computer Science.
+## 👋 Hi there! This repository, jasonbalayev.dev, provides the source code for my personal portfolio website. It's designed to showcase my future and curent projects, skills, and experiences within Computer Science.
 
 ### What’s Inside?
 Project Showcases: Detailed descriptions and demonstrations of my work, highlighting my technical skills and problem-solving abilities.
