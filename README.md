@@ -12,6 +12,6 @@ Contact Information: Ways to get in touch with me for collaborations, job opport
 
 Deployment and Hosting: Hosted on netlify.
 
-Feel free to explore the repository, check out my projects, and connect with me through my website. If you like what you see, consider following me on GitHub or connecting on LinkedIn!
+# Feel free to check out my projects, and connect with me through my website. If you like what you see, consider following me on GitHub or connecting on LinkedIn!
 
 ---
