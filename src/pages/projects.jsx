@@ -11,9 +11,7 @@ const Projects = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5 }}
-        className="absolute bottom-0 right-0 text-white text-arial p-4"
-      >
-        © {new Date().getFullYear()} Jason Balayev. All rights reserved.
+        className="absolute bottom-0 right-0 text-white text-arial p-4">
       </motion.div>
       <motion.div
         initial={{ opacity: 0 }}

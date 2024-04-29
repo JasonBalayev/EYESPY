@@ -18,9 +18,6 @@ const Contact = () => {
         <h1 className="text-3xl text-white font-semibold font-sans mb-4">Contact Me</h1>
         <p className="font-semibold font-sans text-white mb-8">
           Feel free to get in touch with me for any inquiries or collaborations.</p>
-        <div className="absolute bottom-0 right-0 text-white text-arial p-4">
-          © {new Date().getFullYear()} Jason Balayev. All rights reserved.
-        </div>
 
         <div className="flex flex-col items-center space-y-6">
           <div className="flex items-center space-x-4">
