@@ -1,12 +1,16 @@
 # Jason's Portfolio
 
-### Technologies used:
+##👋 Hi there! This repository, jasonbalayev.dev, provides the source code for my personal portfolio website. It's designed to showcase my future and curent projects, skills, and experiences within Computer Science.
 
-![](https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E)
-![](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
-![](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
-![](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
-![](https://img.shields.io/badge/Gatsby-663399?style=for-the-badge&logo=gatsby&logoColor=white)
-![](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+### What’s Inside?
+Project Showcases: Detailed descriptions and demonstrations of my work, highlighting my technical skills and problem-solving abilities.
+#Technologies Used:
+Frontend: HTML, CSS, JavaScript, React.js – for a dynamic and responsive user interface.
+Backend: Node.js, Express – to manage server-side functionalities.
+Contact Information: Ways to get in touch with me for collaborations, job opportunities, or tech discussions.
+
+Deployment and Hosting: Hosted on netlify.
+
+Feel free to explore the repository, check out my projects, and connect with me through my website. If you like what you see, consider following me on GitHub or connecting on LinkedIn!
 
 ---
