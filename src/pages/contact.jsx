@@ -62,7 +62,6 @@ const Contact = () => {
         </div>
       </motion.div>
     </Layout>
-    //test
   );
 };
 
