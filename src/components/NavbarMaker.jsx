@@ -30,6 +30,8 @@ const Navbar = () => {
         ))}
       </div>
 
+        test 
+        
       {isMenuOpen && (
         <div className="sm:hidden absolute top-16 right-0 w-full bg-gray-900">
           {pages.map((page) => (
