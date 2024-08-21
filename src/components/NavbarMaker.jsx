@@ -11,9 +11,9 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="bg-transparent flex items-center justify-between px-4 py-3">
+    <nav className="bg-transparent flex items-center justify-between px-4 py-3 z-50 relative">
       <div className="sm:hidden">
-        <Hamburger toggled={isMenuOpen} toggle={setIsMenuOpen}/>
+        <Hamburger toggled={isMenuOpen} toggle={setIsMenuOpen} />
       </div>
 
       <div className="hidden sm:flex items-center space-x-7">
@@ -21,18 +21,17 @@ const Navbar = () => {
           <Link
             key={page[0]}
             to={page[0]}
-            style={{ fontFamily: "Arial, sans-serif" }} 
-            className="text-white-400 text-xl hover:text-white hover:underline"
+            style={{ fontFamily: "Arial, sans-serif" }}
+            className="text-white text-xl hover:text-gray-300 hover:underline"
             activeClassName="font-bold text-white-500"
           >
             {page[1]}
           </Link>
         ))}
       </div>
-  
-  
+
       {isMenuOpen && (
-        <div className="sm:hidden absolute top-16 right-0 w-full bg-gray-900">
+        <div className="sm:hidden absolute top-16 right-0 w-full bg-gray-900 z-40">
           {pages.map((page) => (
             <Link
               key={page[0] + " mobile"}

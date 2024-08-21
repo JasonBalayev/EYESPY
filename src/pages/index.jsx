@@ -21,10 +21,9 @@ const IndexPage = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5 }}
-        className="flex flex-col items-center justify-center font-serif min-h-screen"
+        className="flex flex-col items-center justify-center font-serif min-h-screen max-w-full px-4"
       >
-        
-        <h1 className="text-7xl md:text-8xl sm:text-7xl lg:text-9xl mt-13 md:mt-1 text-center">
+        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl mt-13 md:mt-1 text-center">
           <TypewriterText text="jasonbalayev.dev" delay={0} />
         </h1>
         <h2 className="text-2xl my-6 text-center">
@@ -48,14 +47,14 @@ const IndexPage = () => {
               size="lg"
               variant="ghost"
               radius="small"
-              className="text-gray-200 hover:text-black hover:bg-blue-700 lg:text-4xl md:text-3xl text-2xl p-8"
+              className="text-gray-200 hover:text-black hover:bg-blue-700 lg:text-4xl md:text-3xl text-2xl p-8 max-w-full"
             >
               👆
             </Button>
           </Link>
         </motion.div>
 
-        <div className="flex flex-wrap justify-center items-center my-10">
+        <div className="flex flex-wrap justify-center items-center my-10 max-w-full">
           {[
             { name: "Python", image: pythonImage },
             { name: "JavaScript", image: javascriptImage },
