@@ -1,7 +1,5 @@
 # Jason's Portfolio
 
-## Welcome to the source code repository for my personal portfolio website.
-
 ### What’s Inside?
 
 - **Project Showcases:** Explore detailed descriptions and demonstrations of my work. Each project highlights my technical skills and showcases my problem-solving abilities in real-world scenarios.
