@@ -1,8 +1,6 @@
 # Jason's Portfolio
 
-## 👋 Hi there!
-
-Welcome to the source code repository for my personal portfolio website.
+## Welcome to the source code repository for my personal portfolio website.
 
 ### What’s Inside?
 
