@@ -6,9 +6,9 @@ This repository, jasonbalayev.dev, provides the source code for my personal port
 ### What’s Inside?
 Project Showcases: Detailed descriptions and demonstrations of my work, highlighting my technical skills and problem-solving abilities.
 ### Technologies Used:
-Frontend: HTML, CSS, JavaScript, React.js – for a dynamic and responsive user interface.
+Frontend: HTML, CSS, JavaScript, React.js, Gatsby – for a dynamic and responsive user interface.
+Styling: Tailwind CSS – for utility-first CSS framework styling.
 Backend: Node.js, Express – to manage server-side functionalities.
-Contact Information: Ways to get in touch with me for collaborations, job opportunities, or tech discussions.
 
 Deployment and Hosting: Hosted on netlify.
 
