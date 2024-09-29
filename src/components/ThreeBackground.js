@@ -56,7 +56,7 @@ const ThreeBackground = () => {
       renderer.render(scene, camera);
     };
 
-    animate(); //Test
+    animate(); 
 
     const handleResize = () => {
       camera.aspect = window.innerWidth / window.innerHeight;
