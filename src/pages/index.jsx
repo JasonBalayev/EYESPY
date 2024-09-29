@@ -1,9 +1,11 @@
+// pages/index.jsx
 import * as React from "react";
 import Layout from "./layout";
 import { Button } from "@nextui-org/button";
 import TypewriterText from "../components/TypewriterText";
 import { Link } from "gatsby";
 import { motion } from "framer-motion";
+import ThreeBackground from "../components/ThreeBackground"; // Import the ThreeBackground component
 import pythonImage from "../images/python.png";
 import javascriptImage from "../images/js.png";
 import htmlImage from "../images/html.png";
@@ -17,11 +19,12 @@ import luaImage from "../images/lua.png";
 const IndexPage = () => {
   return (
     <Layout>
+      <ThreeBackground /> {/* Render the Three.js particle background */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5 }}
-        className="flex flex-col items-center justify-center font-serif min-h-screen max-w-full px-4"
+        className="flex flex-col items-center justify-center font-serif min-h-screen max-w-full px-4 relative z-10"
       >
         <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl mt-13 md:mt-1 text-center">
           <TypewriterText text="jasonbalayev.dev" delay={0} />
