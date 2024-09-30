@@ -1,4 +1,3 @@
-// pages/index.jsx
 import * as React from "react";
 import Layout from "./layout";
 import { Button } from "@nextui-org/button";
@@ -19,60 +18,69 @@ import luaImage from "../images/lua.png";
 const IndexPage = () => {
   return (
     <Layout>
-      <ThreeBackground /> {/* Render the Three.js particle background */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.5 }}
-        className="flex flex-col items-center justify-center font-serif min-h-screen max-w-full px-4 relative z-10"
-      >
-        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl mt-13 md:mt-1 text-center">
-          <TypewriterText text="jasonbalayev.dev" delay={0} />
-        </h1>
-        <h2 className="text-2xl my-6 text-center">
-          <TypewriterText
-            text="Hello, I am Jason Balayev and I am currently studying CS @ Northeastern University - c/o 27'"
-            delay={800}
-            speed={50}
-          />
-        </h2>
-        <h2 className="text-xl font-sans text-white italic text-center mb-5">
-          <TypewriterText text="Click the button below to access source code below within my projects" delay={1900} speed={100} />
-        </h2>
+      {/* Make sure the entire page background allows scrolling */}
+      <div className="overflow-auto min-h-screen w-full">
+        <ThreeBackground /> {/* Render the Three.js particle background */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 1 }}
-          className="mx-auto mt-5"
+          transition={{ duration: 0.5 }}
+          // Center content vertically using flex
+          className="flex flex-col items-center justify-center min-h-screen w-full relative z-10"
         >
-          <Link to="/projects">
-            <Button
-              size="lg"
-              variant="ghost"
-              radius="small"
-              className="text-gray-200 hover:text-black hover:bg-blue-700 lg:text-4xl md:text-3xl text-2xl p-8 max-w-full"
-            >
-              👆
-            </Button>
-          </Link>
-        </motion.div>
+          {/* Move content higher using a smaller margin-top */}
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl mt-10 text-center">
+            <TypewriterText text="jasonbalayev.dev" delay={0} />
+          </h1>
+          <h2 className="text-2xl my-6 text-center">
+            <TypewriterText
+              text="Hello, I am Jason Balayev and I am currently studying CS @ Northeastern University - c/o 27'"
+              delay={800}
+              speed={50}
+            />
+          </h2>
+          <h2 className="text-xl font-sans text-white italic text-center mb-5">
+            <TypewriterText
+              text="Click the button below to access source code below within my projects"
+              delay={1900}
+              speed={100}
+            />
+          </h2>
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1, delay: 1 }}
+            className="mx-auto mt-5"
+          >
+            <Link to="/projects">
+              <Button
+                size="lg"
+                variant="ghost"
+                radius="small"
+                className="text-gray-200 hover:text-black hover:bg-blue-700 lg:text-4xl md:text-3xl text-2xl p-8 max-w-full"
+              >
+                👆
+              </Button>
+            </Link>
+          </motion.div>
 
-        <div className="flex flex-wrap justify-center items-center my-10 max-w-full">
-          {[
-            { name: "Python", image: pythonImage },
-            { name: "JavaScript", image: javascriptImage },
-            { name: "HTML", image: htmlImage },
-            { name: "CSS", image: cssImage },
-            { name: "C", image: cImage },
-            { name: "C++", image: cppImage },
-            { name: "Kotlin", image: kotlinImage },
-            { name: "Java", image: javaImage },
-            { name: "Lua", image: luaImage }
-          ].map((skill, index) => (
-            <SkillCard key={skill.name} name={skill.name} image={skill.image} delay={index * 0.1} />
-          ))}
-        </div>
-      </motion.div>
+          <div className="flex flex-wrap justify-center items-center my-10 max-w-full">
+            {[
+              { name: "Python", image: pythonImage },
+              { name: "JavaScript", image: javascriptImage },
+              { name: "HTML", image: htmlImage },
+              { name: "CSS", image: cssImage },
+              { name: "C", image: cImage },
+              { name: "C++", image: cppImage },
+              { name: "Kotlin", image: kotlinImage },
+              { name: "Java", image: javaImage },
+              { name: "Lua", image: luaImage }
+            ].map((skill, index) => (
+              <SkillCard key={skill.name} name={skill.name} image={skill.image} delay={index * 0.1} />
+            ))}
+          </div>
+        </motion.div>
+      </div>
     </Layout>
   );
 };

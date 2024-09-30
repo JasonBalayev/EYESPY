@@ -13,7 +13,7 @@ const Contact = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5 }}
-        className="flex flex-col items-center text-center mt-10 px-4"
+        className="flex flex-col items-center text-center mt-10 px-4 min-h-screen"
       >
         <h1 className="text-3xl text-white font-semibold font-sans mb-4">Contact Me</h1>
         <p className="font-semibold font-sans text-white mb-8">
@@ -62,7 +62,6 @@ const Contact = () => {
               <img src={discordLogo} alt="Discord" className="h-8 w-8 sm:w-10" />
             </a>
           </div>
-          
         </div>
       </motion.div>
     </Layout>
