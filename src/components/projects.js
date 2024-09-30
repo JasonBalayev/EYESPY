@@ -18,7 +18,7 @@ export var projects = [
     link: "https://github.com/JasonBalayev/MPOX",
   },
   {
-    name: "Northeastern Electric Racing (Click here for gitHub)",
+    name: "Northeastern Racing (Click here for gitHub)",
     description: "A collaborative project contributing to the Northeastern Electric Racing team. This project focuses on software development for electric race car systems, including telemetry, data logging, and optimization algorithms.",
     badges: ["Express.js", "Firmware", "Prisma"],
     link: "https://github.com/JasonBalayev/Northeastern-Electric-Racing",

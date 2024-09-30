@@ -11,7 +11,7 @@ const Projects = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5 }}
-        className="relative z-0 text-white text-arial p-4"
+        className="relative z-0 text-white text-arial p-4 h-screen overflow-auto"
       >
         <ProjectCards projects={projects} />
       </motion.div>
