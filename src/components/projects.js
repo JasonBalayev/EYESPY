@@ -18,15 +18,15 @@ export var projects = [
     link: "https://github.com/JasonBalayev/MPOX",
   },
   {
-    name: "Tic-Tac-Toe (Click here for gitHub)",
-    description: "A simple Tic-Tac-Toe game built using HTML, CSS, and JavaScript. This project showcases basic game logic implementation and interactive UI design for two players.",
-    badges: ["HTML", "CSS", "JavaScript"],
-    link: "https://github.com/JasonBalayev/Tic-Tac-Toe",
-  },
-  {
     name: "Northeastern Electric Racing (Click here for gitHub)",
     description: "A collaborative project contributing to the Northeastern Electric Racing team. This project focuses on software development for electric race car systems, including telemetry, data logging, and optimization algorithms.",
     badges: ["Express.js", "Firmware", "Prisma"],
     link: "https://github.com/JasonBalayev/Northeastern-Electric-Racing",
+  },
+  {
+    name: "Tic-Tac-Toe (Click here for gitHub)",
+    description: "A simple Tic-Tac-Toe game built using HTML, CSS, and JavaScript. This project showcases basic game logic implementation and interactive UI design for two players.",
+    badges: ["HTML", "CSS", "JavaScript"],
+    link: "https://github.com/JasonBalayev/Tic-Tac-Toe",
   }
 ];
