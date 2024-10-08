@@ -15,6 +15,9 @@ import kotlinImage from "../images/kotlin.png";
 import javaImage from "../images/java.png";
 import luaImage from "../images/lua.png";
 import profileImage from "../images/Jason.jpg"; 
+import typeScriptImage from "../images/ts.png"; 
+import prismaImage from "../images/prisma.png"; 
+import asmImage from "../images/asm.jpg"; 
 
 const IndexPage = () => {
   return (
@@ -38,7 +41,7 @@ const IndexPage = () => {
             <img
               src={profileImage}
               alt="Jason Balayev"
-              className="h-32 w-32 sm:h-40 sm:w-40 rounded-full shadow-lg border-2 border-gray-200"
+              className="h-32 w-32 sm:h-56 sm:w-56 rounded-full shadow-lg border-2 border-gray-200"
             />
           </motion.div>
 
@@ -81,14 +84,18 @@ const IndexPage = () => {
           <div className="flex flex-wrap justify-center items-center my-8">
             {[
               { name: "Python", image: pythonImage },
+              { name: "Java", image: javaImage },
               { name: "JavaScript", image: javascriptImage },
               { name: "HTML", image: htmlImage },
               { name: "CSS", image: cssImage },
+              { name: "Assembly", image: asmImage },
               { name: "C", image: cImage },
               { name: "C++", image: cppImage },
               { name: "Kotlin", image: kotlinImage },
-              { name: "Java", image: javaImage },
+              { name: "TypeScript", image: typeScriptImage },
+              { name: "Prisma", image: prismaImage },
               { name: "Lua", image: luaImage }
+              
             ].map((skill, index) => (
               <SkillCard key={skill.name} name={skill.name} image={skill.image} delay={index * 0.1} />
             ))}
