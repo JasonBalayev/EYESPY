@@ -17,7 +17,11 @@ const Contact = () => {
         className="flex flex-col items-center text-center mt-10 px-4 min-h-screen"
       >
         {}
-        <GlowingText text="Contact Me" />
+        <p className="text-xl text-gray-400 mb-10">
+          Select and Drag 'Contact Me' around the page.
+        </p>
+
+        <GlowingText text="Contact Me " />
 
         {}
         <p className="text-3xl text-white mb-8 mt-4">
@@ -73,8 +77,6 @@ const Contact = () => {
           <div className="text-2xl text-white mt-4">
             <p>Personal Email 📧: jasonbalayev@gmail.com</p>
           </div>
-
-      
 
           {}
           <div className="flex justify-center space-x-6 mt-8">
