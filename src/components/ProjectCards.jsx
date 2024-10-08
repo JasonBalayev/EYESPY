@@ -14,30 +14,31 @@ const CustomDivider = () => (
 
 const ProjectCard = ({ project }) => {
   return (
-    <div className="transition-transform duration-300 ease-in-out transform hover:scale-105">
+    <div className="transition-transform duration-300 ease-in-out transform hover:scale-105 w-full">
       <Card
         isBlurred
-        className="bg-gray-900 hover:bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl border-white border-2 flex flex-col justify-between h-64 w-full"
+        className="bg-gray-900 hover:bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl border-white border-2 flex flex-col justify-between w-full h-full"
+        style={{ minHeight: '330px' }}  
       >
         <CardHeader className="flex gap-3 bg-gray-900 p-3">
           <a href={project.link}>
-            <h1 className="text-2xl font-bold text-white hover:text-gray-300 break-words">
+            <h1 className="text-xl md:text-2xl font-bold text-white hover:text-gray-300 break-words">
               {project.name}
             </h1>
           </a>
         </CardHeader>
         <CustomDivider />
-        <CardBody className="p-4 bg-gray-900 flex-grow overflow-auto">
-  <p className="text-lg font-bold text-gray-300 font-inter">
-    {project.description}
-  </p>
-</CardBody>
+        <CardBody className="p-4 bg-gray-900 flex-grow">
+          <p className="text-sm md:text-lg font-bold text-gray-300 font-inter break-words">
+            {project.description}
+          </p>
+        </CardBody>
         <CustomDivider />
-        <CardFooter className="flex justify-center items-center w-full p-3 bg-gray-900">
+        <CardFooter className="flex flex-wrap justify-center items-center w-full p-3 bg-gray-900">
           {project.badges.map((badge) => (
-            <div key={badge} className="m-1">
-              <Card className="bg-gray-900 hover:bg-gray-800 transition duration-300 ease-in-out">
-                <p className="text-sm font-bold text-gray-300 p-2">
+            <div key={badge} className="m-2 text-center">
+              <Card className="bg-gray-900 hover:bg-gray-800 transition duration-300 ease-in-out p-3">
+                <p className="text-lg md:text-xl font-bold text-gray-300 break-words">
                   {badge}
                 </p>
               </Card>

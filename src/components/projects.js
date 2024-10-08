@@ -27,6 +27,12 @@ export var projects = [
     name: "Tic-Tac-Toe (Click here for gitHub)",
     description: "A simple Tic-Tac-Toe game built using HTML, CSS, and JavaScript. This project showcases basic game logic implementation and interactive UI design for two players. Also incorporates the minimax algorithm to win at all times in a standard 3x3 match.",
     badges: ["HTML", "CSS", "JavaScript"],
-    link: "https://github.com/JasonBalayev/Tic-Tac-Toe",
+    link: "https://github.com/JasonBalayev/Tic-Tac-Toe",    
+  },
+  {
+    name: "AI-Convex (Click here for gitHub)",
+    description: "A simple Tic-Tac-Toe game built using HTML, CSS, and JavaScript. This project showcases basic game logic implementation and interactive UI design for two players. Also incorporates the minimax algorithm to win at all times in a standard 3x3 match.",
+    badges: ["HTML", "CSS", "JavaScript"],
+    link: "https://github.com/JasonBalayev/Tic-Tac-Toe",    
   }
 ];

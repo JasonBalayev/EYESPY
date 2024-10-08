@@ -18,28 +18,27 @@ import luaImage from "../images/lua.png";
 const IndexPage = () => {
   return (
     <Layout>
-      {/* Make sure the entire page background allows scrolling */}
+      {/* Ensure page background allows scrolling */}
       <div className="overflow-auto min-h-screen w-full">
         <ThreeBackground /> {/* Render the Three.js particle background */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5 }}
-          // Center content vertically using flex
-          className="flex flex-col items-center justify-center min-h-screen w-full relative z-10"
+          className="flex flex-col items-center justify-center min-h-screen w-full relative z-10 px-4"
         >
           {/* Move content higher using a smaller margin-top */}
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl mt-10 text-center">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl mt-8 text-center">
             <TypewriterText text="jasonbalayev.dev" delay={0} />
           </h1>
-          <h2 className="text-2xl my-6 text-center">
+          <h2 className="text-xl sm:text-2xl my-4 text-center">
             <TypewriterText
               text="Hello, I am Jason Balayev and I am currently studying CS @ Northeastern University - c/o 27'"
               delay={800}
               speed={50}
             />
           </h2>
-          <h2 className="text-xl font-sans text-white italic text-center mb-5">
+          <h2 className="text-lg sm:text-xl font-sans text-white italic text-center mb-4">
             <TypewriterText
               text="Click the button below to access source code below within my projects"
               delay={1900}
@@ -50,21 +49,21 @@ const IndexPage = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 1 }}
-            className="mx-auto mt-5"
+            className="mx-auto mt-4"
           >
             <Link to="/projects">
               <Button
                 size="lg"
                 variant="ghost"
                 radius="small"
-                className="text-gray-200 hover:text-black hover:bg-blue-700 lg:text-4xl md:text-3xl text-2xl p-8 max-w-full"
+                className="text-gray-200 hover:text-black hover:bg-blue-700 text-xl sm:text-2xl p-6 max-w-full"
               >
                 👆
               </Button>
             </Link>
           </motion.div>
 
-          <div className="flex flex-wrap justify-center items-center my-10 max-w-full">
+          <div className="flex flex-wrap justify-center items-center my-8">
             {[
               { name: "Python", image: pythonImage },
               { name: "JavaScript", image: javascriptImage },
@@ -91,10 +90,10 @@ const SkillCard = ({ name, image, delay }) => {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay }}
-      className="m-4 text-center"
+      className="m-2 text-center"
     >
-      <img src={image} alt={name} className="h-16 w-16 mx-auto mb-2" />
-      <p className="text-lg font-semibold text-white">{name}</p>
+      <img src={image} alt={name} className="h-14 w-14 mx-auto mb-1 sm:h-16 sm:w-16" />
+      <p className="text-md sm:text-lg font-semibold text-white">{name}</p>
     </motion.div>
   );
 };
