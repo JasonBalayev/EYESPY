@@ -2,7 +2,6 @@ import React from "react";
 import { Card, Divider } from "@nextui-org/react";
 import { CardBody, CardFooter, CardHeader } from "@nextui-org/react";
 import { motion } from "framer-motion";
-import tool from "../images/poly.png"; 
 
 const ProjectCard = ({ project }) => {
   return (
@@ -29,7 +28,7 @@ const ProjectCard = ({ project }) => {
 
         <div className="flex flex-row items-center justify-center">
           {project.name === "AI-Convex 🤖 (Click here for gitHub)" && (
-            <a href={project.link}>
+            <a href={"https://ai-convex-mu.vercel.app/"}>
               <p className="text-2xl font-bold text-yellow-400 font-sans px-6 py-2 bg-red-600 rounded-lg shadow-lg hover:bg-red-700 transition-all duration-300 mt-2">
                 Check it Out Live
               </p>

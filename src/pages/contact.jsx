@@ -6,7 +6,6 @@ import linkedInLogo from "../images/in.png";
 import discordLogo from "../images/disco.png";
 import { motion } from "framer-motion";
 import GlowingText from "../components/GlowingText";  
-import logoNEU from "../images/logoneu.png"; 
 
 const Contact = () => {
   return (
