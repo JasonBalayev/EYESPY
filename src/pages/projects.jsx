@@ -3,7 +3,6 @@ import Layout from "./layout";
 import ProjectCards from "../components/ProjectCards";
 import { projects } from "../components/projects";
 import { motion } from "framer-motion";
-import logoNEU from "../images/logoneu.png"; 
 
 const Projects = () => {
   return (
