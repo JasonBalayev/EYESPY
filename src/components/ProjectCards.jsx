@@ -1,82 +1,76 @@
 import React from "react";
-import { Card } from "@nextui-org/react";
+import { Card, Divider } from "@nextui-org/react";
 import { CardBody, CardFooter, CardHeader } from "@nextui-org/react";
-
-const CustomDivider = () => (
-  <div
-    style={{
-      height: '2px',
-      backgroundColor: 'rgba(255, 255, 255, 0.5)',
-      width: '100%',
-    }}
-  ></div>
-);
 
 const ProjectCard = ({ project }) => {
   return (
-    <div className="transition-transform duration-300 ease-in-out transform hover:scale-105 w-full">
-      <Card
-        isBlurred
-        className="bg-gray-900 hover:bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl border-white border-2 flex flex-col justify-between w-full h-full"
-        style={{ minHeight: '360px' }}  
-      >
-        <CardHeader className="flex gap-3 bg-gray-900 p-3">
-          <a href={project.link}>
-            <h1 className="text-xl md:text-2xl font-bold text-white hover:text-gray-300 break-words">
-              {project.name}
-            </h1>
-          </a>
-        </CardHeader>
-        <CustomDivider />
-        <CardBody className="p-4 bg-gray-900 flex-grow">
-          <p className="text-sm md:text-lg font-bold text-gray-300 font-inter break-words">
-            {project.description}
-          </p>
-          {project.name.includes("AI-Convex") && (
-            <a
-              href="https://ai-convex-mu.vercel.app/"
-              className="text-blue-400 hover:underline"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Visit the live project
+    <Card isBlurred className="bg-blue-800 w-full m-0">
+      <CardHeader className="flex gap-3">
+        <a href={project.link}>
+          <h1 className="text-[24px] font-sans font-bold text-white drop-shadow-lg">
+            {project.name}
+          </h1>
+        </a>
+      </CardHeader>
+      <Divider />
+      <CardBody>
+        <p className="text-xl text-white">{project.description}</p>
+        <div className="flex flex-row items-center justify-center">
+          {project.link ? (
+            <a href={project.link}>
+              <p className="text-lg font-bold text-white underline font-sans px-4">
+                Project Code
+              </p>
             </a>
+          ) : (
+            <div></div>
           )}
-          {project.name.includes("jasonbalayev.dev") && (
-            <a
-              href="https://jasonbalayev.dev"
-              className="text-blue-400 hover:underline"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Visit the live project
+          {project.link2 ? (
+            <a href={project.link2}>
+              <p className="text-lg font-bold text-white underline font-sans px-4">
+                Try It Live
+              </p>
             </a>
+          ) : (
+            <div></div>
           )}
-        </CardBody>
-        <CustomDivider />
-        <CardFooter className="flex flex-wrap justify-center items-center w-full p-3 bg-gray-900">
+        </div>
+      </CardBody>
+      <Divider />
+      <CardFooter>
+        <div className="flex flex-wrap justify-center items-center w-full">
           {project.badges.map((badge) => (
-            <div key={badge} className="m-2 text-center">
-              <Card className="bg-gray-900 hover:bg-gray-800 transition duration-300 ease-in-out p-3">
-                <p className="text-lg md:text-xl font-bold text-gray-300 break-words">
+            <div key={badge}>
+              <Card className="bg-slate-800 m-1">
+                <p className="text-[14px] font-bold text-white mx-2 my-1">
                   {badge}
                 </p>
               </Card>
             </div>
           ))}
-        </CardFooter>
-      </Card>
-    </div>
+          {project.hackathon && (
+            <a
+              href={project.hackathon.link}
+              aria-label={`Link to ${project.hackathon.name}`}
+            >
+              <Card className="bg-blue-900 m-1">
+                <p className="text-[16px] text-white font-sans font-bold mx-2 my-1">
+                  {project.hackathon.name}
+                </p>
+              </Card>
+            </a>
+          )}
+        </div>
+      </CardFooter>
+    </Card>
   );
 };
 
 const ProjectCards = ({ projects }) => {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 w-full">
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 w-full">
       {projects.map((project) => (
-        <div key={project.name} className="w-full">
-          <ProjectCard project={project} />
-        </div>
+        <ProjectCard key={project.name} project={project} />
       ))}
     </div>
   );
