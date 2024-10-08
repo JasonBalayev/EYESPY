@@ -1,10 +1,21 @@
 import React from "react";
 import { Card, Divider } from "@nextui-org/react";
 import { CardBody, CardFooter, CardHeader } from "@nextui-org/react";
+import { motion } from "framer-motion";
+import tool from "../images/poly.png"; 
 
 const ProjectCard = ({ project }) => {
   return (
-    <Card isBlurred className="bg-blue-800 w-full m-0">
+    <Card isBlurred className="bg-blue-800 w-full m-0 relative">
+      <motion.div
+        initial={{ opacity: 0, scale: 1 }}
+        animate={{ opacity: 1, scale: 1 }}
+        whileHover={{ scale: 1.2 }}
+        transition={{ duration: 0.3 }}
+        className="absolute top-3 right-3 z-20"
+      >
+      </motion.div>
+
       <CardHeader className="flex gap-3">
         <a href={project.link}>
           <h1 className="text-[24px] font-sans font-bold text-white drop-shadow-lg">
@@ -15,24 +26,21 @@ const ProjectCard = ({ project }) => {
       <Divider />
       <CardBody>
         <p className="text-xl text-white">{project.description}</p>
+
         <div className="flex flex-row items-center justify-center">
-          {project.link ? (
+          {project.name === "AI-Convex 🤖 (Click here for gitHub)" && (
             <a href={project.link}>
-              <p className="text-lg font-bold text-white underline font-sans px-4">
-                Project Code
+              <p className="text-2xl font-bold text-yellow-400 font-sans px-6 py-2 bg-red-600 rounded-lg shadow-lg hover:bg-red-700 transition-all duration-300 mt-2">
+                Check it Out Live
               </p>
             </a>
-          ) : (
-            <div></div>
           )}
-          {project.link2 ? (
-            <a href={project.link2}>
-              <p className="text-lg font-bold text-white underline font-sans px-4">
-                Try It Live
+          {project.name === "jasonbalayev.dev 🔧 (Click here for gitHub)" && (
+            <a href="https://jasonbalayev.dev">
+              <p className="text-2xl font-bold text-yellow-400 font-sans px-6 py-2 bg-green-600 rounded-lg shadow-lg hover:bg-green-700 transition-all duration-300 mt-2">
+                Check it Out Live
               </p>
             </a>
-          ) : (
-            <div></div>
           )}
         </div>
       </CardBody>

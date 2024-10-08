@@ -2,14 +2,24 @@ import * as React from "react";
 import Layout from "./layout";
 import { Button } from "@nextui-org/button";
 import githubLogo from "../images/github-mark-white.svg";
-import linkedInLogo from "../images/linkedIn.png";
-import discordLogo from "../images/discord.png";
+import linkedInLogo from "../images/in.png";
+import discordLogo from "../images/disco.png";
 import { motion } from "framer-motion";
 import GlowingText from "../components/GlowingText";  
+import logoNEU from "../images/logoneu.png"; 
 
 const Contact = () => {
   return (
     <Layout>
+      <motion.div
+        initial={{ opacity: 0, scale: 1 }}
+        animate={{ opacity: 1, scale: 1 }}
+        whileHover={{ scale: 1.2 }}
+        transition={{ duration: 0.3 }}
+        className="absolute top-5 right-5 sm:top-8 sm:right-8 z-20"
+      >
+      </motion.div>
+
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -37,9 +47,14 @@ const Contact = () => {
               className="w-full sm:w-auto"
             >
               <Button
-                className="glowing-button bg-blue-600 text-white text-md h-14 w-full sm:w-35"
+                className="glowing-button bg-blue-600 text-white text-md h-14 w-full sm:w-35 flex items-center justify-between"
               >
                 @linkedIn
+                <img
+                  src={linkedInLogo}
+                  alt="LinkedIn"
+                  className="h-8 w-9 ml-2"
+                />
               </Button>
             </motion.a>
 
@@ -49,9 +64,14 @@ const Contact = () => {
               className="w-full sm:w-auto"
             >
               <Button
-                className="glowing-button bg-gray-950 text-white text-md h-14 w-full sm:w-35"
+                className="glowing-button bg-gray-950 text-white text-md h-14 w-full sm:w-35 flex items-center justify-between"
               >
                 @gitHub
+                <img
+                  src={githubLogo}
+                  alt="GitHub"
+                  className="h-6 w-6 ml-2"
+                />
               </Button>
             </motion.a>
 
@@ -61,9 +81,14 @@ const Contact = () => {
               className="w-full sm:w-auto"
             >
               <Button
-                className="glowing-button bg-blue-600 text-white text-md h-14 w-full sm:w-35"
+                className="glowing-button bg-blue-600 text-white text-md h-14 w-full sm:w-35 flex items-center justify-between"
               >
                 @discordProfile
+                <img
+                  src={discordLogo}
+                  alt="Discord"
+                  className="h-6 w-7 ml-2"
+                />
               </Button>
             </motion.a>
           </div>
@@ -76,43 +101,6 @@ const Contact = () => {
           {}
           <div className="text-xl text-white mt-4">
             <p>Personal Email 📧: jasonbalayev@gmail.com</p>
-          </div>
-
-          {}
-          <div className="flex justify-center space-x-6 mt-8">
-            <motion.a
-              whileHover={{ scale: 1.2 }}
-              href="https://linkedin.com/in/jasonbalayev/"
-              className="transform transition-transform"
-            >
-              <img
-                src={linkedInLogo}
-                alt="LinkedIn"
-                className="glowing-icon h-12 w-15 sm:h-16 sm:w-15"
-              />
-            </motion.a>
-            <motion.a
-              whileHover={{ scale: 1.2 }}
-              href="https://github.com/JasonBalayev"
-              className="transform transition-transform"
-            >
-              <img
-                src={githubLogo}
-                alt="GitHub"
-                className="glowing-icon h-12 w-12 sm:h-16 sm:w-16 aspect-square"
-              />
-            </motion.a>
-            <motion.a
-              whileHover={{ scale: 1.2 }}
-              href="https://discordapp.com/users/1149941204243464222"
-              className="transform transition-transform"
-            >
-              <img
-                src={discordLogo}
-                alt="Discord"
-                className="glowing-icon h-14 w-12 sm:h-16 sm:w-20 aspect-square"
-              />
-            </motion.a>
           </div>
         </div>
       </motion.div>

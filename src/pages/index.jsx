@@ -18,13 +18,28 @@ import profileImage from "../images/Jason.jpg";
 import typeScriptImage from "../images/ts.png"; 
 import prismaImage from "../images/prisma.png"; 
 import asmImage from "../images/asm.jpg"; 
+import logoNEU from "../images/logoneu.png";
 
 const IndexPage = () => {
   return (
     <Layout>
       <div className="overflow-auto min-h-screen w-full">
-        {/*3js Background Not Working*/}
+        {/* 3js Background */}
         <ThreeBackground /> 
+        <motion.div
+          initial={{ opacity: 0, scale: 1 }}
+          animate={{ opacity: 1, scale: 1 }}
+          whileHover={{ scale: 1.2 }}
+          transition={{ duration: 0.3 }}
+          className="absolute top-5 right-5 sm:top-8 sm:right-8 z-20"
+        >
+          <img
+            src={logoNEU}
+            alt="Northeastern University Logo"
+            className="h-20 w-20 sm:h-32 sm:w-32 object-contain"
+          />
+        </motion.div>
+
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -45,7 +60,6 @@ const IndexPage = () => {
             />
           </motion.div>
 
-    
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl mt-4 text-center">
             <TypewriterText text="jasonbalayev.dev🔧" delay={0} />
           </h1>

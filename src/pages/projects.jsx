@@ -3,15 +3,17 @@ import Layout from "./layout";
 import ProjectCards from "../components/ProjectCards";
 import { projects } from "../components/projects";
 import { motion } from "framer-motion";
+import logoNEU from "../images/logoneu.png"; 
 
 const Projects = () => {
   return (
     <Layout>
+
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5 }}
-        className="relative z-0 text-white text-arial p-4 h-screen overflow-auto"
+        className="relative z-0 text-white text-arial h-screen overflow-auto"
       >
         <ProjectCards projects={projects} />
       </motion.div>
