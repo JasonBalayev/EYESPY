@@ -5,6 +5,7 @@ import githubLogo from "../images/github-mark-white.svg";
 import linkedInLogo from "../images/linkedIn.png";
 import discordLogo from "../images/discord.png";
 import { motion } from "framer-motion";
+import GlowingText from "../components/GlowingText";  
 
 const Contact = () => {
   return (
@@ -15,52 +16,101 @@ const Contact = () => {
         transition={{ duration: 0.5 }}
         className="flex flex-col items-center text-center mt-10 px-4 min-h-screen"
       >
-        <h1 className="text-3xl text-white font-semibold font-sans mb-4">Contact Me</h1>
-        <p className="font-semibold font-sans text-white mb-8">
+        {}
+        <GlowingText text="Contact Me" />
+
+        {}
+        <p className="text-3xl text-white mb-8 mt-4">
           Feel free to get in touch with me for any inquiries or collaborations.
         </p>
 
         <div className="flex flex-col items-center space-y-6 w-full">
+          {}
           <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4 w-full">
-            <a href="https://linkedin.com/in/jasonbalayev/">
+            <motion.a
+              whileHover={{ scale: 1.2 }}
+              href="https://linkedin.com/in/jasonbalayev/"
+              className="w-full sm:w-auto"
+            >
               <Button
-                className="rainbow-text bg-blue-600 text-white font-bold text-md h-14 w-full sm:w-35"
+                className="glowing-button bg-blue-600 text-white text-md h-14 w-full sm:w-35"
               >
                 @linkedIn
               </Button>
-            </a>
+            </motion.a>
 
-            <a href="https://github.com/JasonBalayev">
+            <motion.a
+              whileHover={{ scale: 1.2 }}
+              href="https://github.com/JasonBalayev"
+              className="w-full sm:w-auto"
+            >
               <Button
-                className="rainbow-text bg-gray-950 text-white font-bold text-md h-14 w-full sm:w-35"
+                className="glowing-button bg-gray-950 text-white text-md h-14 w-full sm:w-35"
               >
                 @gitHub
               </Button>
-            </a>
+            </motion.a>
 
-            <a href="https://discordapp.com/users/1149941204243464222">
+            <motion.a
+              whileHover={{ scale: 1.2 }}
+              href="https://discordapp.com/users/1149941204243464222"
+              className="w-full sm:w-auto"
+            >
               <Button
-                className="rainbow-text bg-blue-600 text-white font-bold text-md h-14 w-full sm:w-35"
+                className="glowing-button bg-blue-600 text-white text-md h-14 w-full sm:w-35"
               >
                 @discordProfile
               </Button>
-            </a>
+            </motion.a>
           </div>
 
-          <div className="text-lg text-white font-semibold font-sans">
-            <p>Email: balayev.j@northeastern.edu</p>
+          {}
+          <div className="text-2xl text-white mt-4">
+            <p>School Email 📧: balayev.j@northeastern.edu</p>
           </div>
 
-          <div className="flex justify-center space-x-4">
-            <a href="https://linkedin.com/in/jasonbalayev/">
-              <img src={linkedInLogo} alt="LinkedIn" className="h-8 w-8 sm:w-10" />
-            </a>
-            <a href="https://github.com/JasonBalayev">
-              <img src={githubLogo} alt="GitHub" className="h-8 w-8 sm:w-8" />
-            </a>
-            <a href="https://discordapp.com/users/1149941204243464222">
-              <img src={discordLogo} alt="Discord" className="h-8 w-8 sm:w-10" />
-            </a>
+          {}
+          <div className="text-2xl text-white mt-4">
+            <p>Personal Email 📧: jasonbalayev@gmail.com</p>
+          </div>
+
+      
+
+          {}
+          <div className="flex justify-center space-x-6 mt-8">
+            <motion.a
+              whileHover={{ scale: 1.2 }}
+              href="https://linkedin.com/in/jasonbalayev/"
+              className="transform transition-transform"
+            >
+              <img
+                src={linkedInLogo}
+                alt="LinkedIn"
+                className="glowing-icon h-12 w-15 sm:h-16 sm:w-15"
+              />
+            </motion.a>
+            <motion.a
+              whileHover={{ scale: 1.2 }}
+              href="https://github.com/JasonBalayev"
+              className="transform transition-transform"
+            >
+              <img
+                src={githubLogo}
+                alt="GitHub"
+                className="glowing-icon h-12 w-12 sm:h-16 sm:w-16 aspect-square"
+              />
+            </motion.a>
+            <motion.a
+              whileHover={{ scale: 1.2 }}
+              href="https://discordapp.com/users/1149941204243464222"
+              className="transform transition-transform"
+            >
+              <img
+                src={discordLogo}
+                alt="Discord"
+                className="glowing-icon h-14 w-12 sm:h-16 sm:w-20 aspect-square"
+              />
+            </motion.a>
           </div>
         </div>
       </motion.div>

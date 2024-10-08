@@ -6,11 +6,20 @@ html, body {
   margin: 0;
   min-height: 100%;
   width: 100%;
-  background: #535353; /* Fallback to black in case of issues */
-  font-family: 'Your Font Name', sans-serif;
+  background: #535353; 
+ 
 }
 
 .content-wrapper {
   position: relative;
   z-index: 10;
+}
+
+
+.glowing-text {
+  text-shadow: 0 0 10px rgba(70, 52, 175, 0.8), 0 0 20px rgba(255, 255, 255, 0.6),
+    0 0 30px rgba(0, 206, 209, 0.8), 0 0 40px rgba(0, 206, 209, 0.8),
+    0 0 50px rgba(0, 206, 209, 0.8), 0 0 60px rgba(0, 206, 209, 0.8),
+    0 0 70px rgb(87, 24, 175);
+  transition: all 0.2s ease-in-out;
 }

@@ -38,7 +38,7 @@ const IndexPage = () => {
               speed={50}
             />
           </h2>
-          <h2 className="text-lg sm:text-xl font-sans text-white italic text-center mb-4">
+          <h2 className="text-lg sm:text-xl text-white italic text-center mb-4">
             <TypewriterText
               text="Click the button below to access source code below within my projects"
               delay={1900}
