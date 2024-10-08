@@ -20,8 +20,7 @@ const Navbar = () => {
         {pages.map((page) => (
           <Link
             key={page[0]}
-            to={page[0]}
-            style={{ fontFamily: "Arial, sans-serif" }}
+            to={page[0]}    
             className="text-white text-xl hover:text-gray-300 hover:underline"
             activeClassName="font-bold text-white-500"
           >
@@ -36,7 +35,7 @@ const Navbar = () => {
             <Link
               key={page[0] + " mobile"}
               to={page[0]}
-              className="block py-2 px-4 text-white text-lg hover:bg-gray-700 hover:underline"
+              className="block py-2 px-4 text-grey text-lg hover:bg-gray-700 hover:underline"
               activeClassName="font-bold text-black-500"
             >
               {page[1]}

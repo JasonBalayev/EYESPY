@@ -14,21 +14,36 @@ import cppImage from "../images/cpp.png";
 import kotlinImage from "../images/kotlin.png";
 import javaImage from "../images/java.png";
 import luaImage from "../images/lua.png";
+import profileImage from "../images/Jason.jpg"; 
 
 const IndexPage = () => {
   return (
     <Layout>
-      {/* Ensure page background allows scrolling */}
       <div className="overflow-auto min-h-screen w-full">
-        <ThreeBackground /> {/* Render the Three.js particle background */}
+        {/*3js Background Not Working*/}
+        <ThreeBackground /> 
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5 }}
           className="flex flex-col items-center justify-center min-h-screen w-full relative z-10 px-4"
         >
-          {/* Move content higher using a smaller margin-top */}
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl mt-8 text-center">
+          {/* Profile Image */}
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7 }}
+            className="mb-6"
+          >
+            <img
+              src={profileImage}
+              alt="Jason Balayev"
+              className="h-32 w-32 sm:h-40 sm:w-40 rounded-full shadow-lg border-2 border-gray-200"
+            />
+          </motion.div>
+
+    
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl mt-4 text-center">
             <TypewriterText text="jasonbalayev.dev🔧" delay={0} />
           </h1>
           <h2 className="text-xl sm:text-2xl my-4 text-center">
