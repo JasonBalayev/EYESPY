@@ -29,18 +29,18 @@ const IndexPage = () => {
         >
           {/* Move content higher using a smaller margin-top */}
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl mt-8 text-center">
-            <TypewriterText text="jasonbalayev.dev" delay={0} />
+            <TypewriterText text="jasonbalayev.dev🔧" delay={0} />
           </h1>
           <h2 className="text-xl sm:text-2xl my-4 text-center">
             <TypewriterText
-              text="Hello, I am Jason Balayev and I am currently studying CS @ Northeastern University - c/o 27'"
+              text="Hello, I am Jason Balayev and I am currently studying CS 💻 @ Northeastern University - c/o 27'"
               delay={800}
               speed={50}
             />
           </h2>
-          <h2 className="text-xl sm:text-xl text-white text-center mb-4">
+          <h2 className="text-xl sm:text-xl text-grey-800 text-center mb-4">
             <TypewriterText
-              text="Click the button below to access source code below within my projects"
+              text="Click the button below to access source code below within my projects 🛠️"
               delay={1900}
               speed={100}
             />

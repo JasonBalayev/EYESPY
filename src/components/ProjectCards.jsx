@@ -18,7 +18,7 @@ const ProjectCard = ({ project }) => {
       <Card
         isBlurred
         className="bg-gray-900 hover:bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl border-white border-2 flex flex-col justify-between w-full h-full"
-        style={{ minHeight: '330px' }}  
+        style={{ minHeight: '360px' }}  
       >
         <CardHeader className="flex gap-3 bg-gray-900 p-3">
           <a href={project.link}>
@@ -32,6 +32,26 @@ const ProjectCard = ({ project }) => {
           <p className="text-sm md:text-lg font-bold text-gray-300 font-inter break-words">
             {project.description}
           </p>
+          {project.name.includes("AI-Convex") && (
+            <a
+              href="https://ai-convex-mu.vercel.app/"
+              className="text-blue-400 hover:underline"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Visit the live project
+            </a>
+          )}
+          {project.name.includes("jasonbalayev.dev") && (
+            <a
+              href="https://jasonbalayev.dev"
+              className="text-blue-400 hover:underline"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Visit the live project
+            </a>
+          )}
         </CardBody>
         <CustomDivider />
         <CardFooter className="flex flex-wrap justify-center items-center w-full p-3 bg-gray-900">

@@ -71,7 +71,7 @@ const ThreeBackground = () => {
       if (currentMount) {
         currentMount.removeChild(renderer.domElement);
       }
-      renderer.dispose(); // Clean up the renderer to prevent memory leaks
+      renderer.dispose(); 
     };
   }, []);
 
