@@ -69,12 +69,12 @@ const Contact = () => {
           </div>
 
           {}
-          <div className="text-2xl text-white mt-4">
+          <div className="text-xl text-white mt-4">
             <p>School Email 📧: balayev.j@northeastern.edu</p>
           </div>
 
           {}
-          <div className="text-2xl text-white mt-4">
+          <div className="text-xl text-white mt-4">
             <p>Personal Email 📧: jasonbalayev@gmail.com</p>
           </div>
 
