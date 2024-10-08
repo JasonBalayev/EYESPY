@@ -7,7 +7,7 @@ export var projects = [
   },
   {
     name: "AI-Convex 🤖 (Click here for gitHub)",
-    description: "An AI-powered To-Do list application built using React, Convex, and TypeScript. This project integrates AI to enhance task management efficiency, offering personalized suggestions and smart features." ,
+    description: "AI-Convex is an AI-powered To-Do list application built using React, Verscel, Convex, TypeScript, and Clerk Authentication. This project integrates AI to enhance task management efficiency, offering personalized suggestions and smart features." ,
     badges: ["React", "Convex", "Vercel", "TypeScript", "Clerk Auth"],
     link: "https://github.com/JasonBalayev/AI-Convex",    
   },

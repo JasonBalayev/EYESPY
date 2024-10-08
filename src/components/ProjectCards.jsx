@@ -5,15 +5,14 @@ import { motion } from "framer-motion";
 
 const ProjectCard = ({ project }) => {
   return (
-    <Card isBlurred className="bg-blue-800 w-full m-0 relative">
+    <Card isBlurred className="bg-blue-800 w-full m-0 relative flex flex-col">
       <motion.div
         initial={{ opacity: 0, scale: 1 }}
         animate={{ opacity: 1, scale: 1 }}
         whileHover={{ scale: 1.2 }}
         transition={{ duration: 0.3 }}
         className="absolute top-3 right-3 z-20"
-      >
-      </motion.div>
+      ></motion.div>
 
       <CardHeader className="flex gap-3">
         <a href={project.link}>
@@ -23,10 +22,11 @@ const ProjectCard = ({ project }) => {
         </a>
       </CardHeader>
       <Divider />
-      <CardBody>
+      {/* Added min-height and flex-grow to balance card height at zoom levels */}
+      <CardBody className="min-h-[220px] flex flex-col justify-between">
         <p className="text-xl text-white">{project.description}</p>
 
-        <div className="flex flex-row items-center justify-center">
+        <div className="flex flex-row items-center justify-center mt-auto">
           {project.name === "AI-Convex 🤖 (Click here for gitHub)" && (
             <a href={"https://ai-convex-mu.vercel.app/"}>
               <p className="text-2xl font-bold text-yellow-400 font-sans px-6 py-2 bg-red-600 rounded-lg shadow-lg hover:bg-red-700 transition-all duration-300 mt-2">
