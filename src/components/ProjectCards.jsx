@@ -22,20 +22,33 @@ const ProjectCard = ({ project }) => {
         </a>
       </CardHeader>
       <Divider />
-      {/* Added min-height and flex-grow to balance card height at zoom levels */}
       <CardBody className="min-h-[220px] flex flex-col justify-between">
         <p className="text-xl text-white">{project.description}</p>
 
         <div className="flex flex-row items-center justify-center mt-auto">
           {project.name === "AI-Convex 🤖 (Click here for gitHub)" && (
             <a href={"https://ai-convex-mu.vercel.app/"}>
-              <p className="text-2xl font-bold text-yellow-400 font-sans px-6 py-2 bg-red-600 rounded-lg shadow-lg hover:bg-red-700 transition-all duration-300 mt-2">
+              <p className="text-2xl font-bold text-yellow-400 font-sans px-6 py-2 bg-green-600 rounded-lg shadow-lg hover:bg-green-700 transition-all duration-300 mt-2">
                 Check it Out Live
               </p>
             </a>
           )}
           {project.name === "jasonbalayev.dev 🔧 (Click here for gitHub)" && (
             <a href="https://jasonbalayev.dev">
+              <p className="text-2xl font-bold text-yellow-400 font-sans px-6 py-2 bg-green-600 rounded-lg shadow-lg hover:bg-green-700 transition-all duration-300 mt-2">
+                Check it Out Live
+              </p>
+            </a>
+          )}
+          {project.name === "Jason's AI Space 🤖 (Click here for gitHub)" && (
+            <a href="https://jasonsai-space.vercel.app/">
+              <p className="text-2xl font-bold text-yellow-400 font-sans px-6 py-2 bg-green-600 rounded-lg shadow-lg hover:bg-green-700 transition-all duration-300 mt-2">
+                Check it Out Live
+              </p>
+            </a>
+          )}
+          {project.name === "AI SaaS FlashSet 🤖 (Click here for gitHub)" && (
+            <a href="https://ai-stripe-saas.vercel.app/">
               <p className="text-2xl font-bold text-yellow-400 font-sans px-6 py-2 bg-green-600 rounded-lg shadow-lg hover:bg-green-700 transition-all duration-300 mt-2">
                 Check it Out Live
               </p>
