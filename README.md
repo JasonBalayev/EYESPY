@@ -25,7 +25,11 @@
 - **Platform:**  
   Netlify  
   The site is deployed and hosted on Netlify, ensuring high availability and ease of continuous integration.
+  
 
 ## Connect With Me
 
 Feel free to explore my projects and connect with me through my website. If you find my work interesting, consider following me on GitHub or connecting with me on LinkedIn!
+
+## How To Build Locally ##
+- gatsby develop
