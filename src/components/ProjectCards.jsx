@@ -48,7 +48,7 @@ const ProjectCard = ({ project }) => {
             </a>
           )}
           {project.name === "AI SaaS FlashSet 🤖 (Click here for gitHub)" && (
-            <a href="https://ai-stripe-saas.vercel.app/">
+            <a href="https://ai-flashset.vercel.app/">
               <p className="text-2xl font-bold text-yellow-400 font-sans px-6 py-2 bg-green-600 rounded-lg shadow-lg hover:bg-green-700 transition-all duration-300 mt-2">
                 Check it Out Live
               </p>
