@@ -4,117 +4,113 @@ import { Button } from "@nextui-org/button";
 import TypewriterText from "../components/TypewriterText";
 import { Link } from "gatsby";
 import { motion } from "framer-motion";
-import ThreeBackground from "../components/ThreeBackground"; // Import the ThreeBackground component
-import pythonImage from "../images/python.png";
-import javascriptImage from "../images/js.png";
-import htmlImage from "../images/html.png";
-import cssImage from "../images/css.png";
-import cImage from "../images/c.png";
-import cppImage from "../images/cpp.png";
-import kotlinImage from "../images/kotlin.png";
-import javaImage from "../images/java.png";
-import luaImage from "../images/lua.png";
-import profileImage from "../images/Jason.jpg"; 
-import typeScriptImage from "../images/ts.png"; 
-import prismaImage from "../images/prisma.png"; 
-import asmImage from "../images/asm.jpg"; 
-import logoNEU from "../images/logoneu.png";
+import profileImage from "../images/Jason.jpg";
+
+import { FaArrowDown } from "react-icons/fa";
+
+
+import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
+import ParticleBackground from "../components/ParticleBackground"; 
+import skillsData from "../data/skillsData.js";
 
 const IndexPage = () => {
   return (
     <Layout>
-      <div className="overflow-auto min-h-screen w-full">
-        {/* 3js Background */}
-        <ThreeBackground /> 
-        <motion.div
-          initial={{ opacity: 0, scale: 1 }}
-          animate={{ opacity: 1, scale: 1 }}
-          whileHover={{ scale: 1.2 }}
-          transition={{ duration: 0.3 }}
-          className="absolute top-5 right-5 sm:top-8 sm:right-8 z-20"
-        >
-          <img
-            src={logoNEU}
-            alt="Northeastern University Logo"
-            className="h-20 w-20 sm:h-32 sm:w-32 object-contain"
-          />
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.5 }}
-          className="flex flex-col items-center justify-center min-h-screen w-full relative z-10 px-4"
-        >
-          {/* Profile Image */}
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7 }}
-            className="mb-6"
-          >
-            <img
+      <div className="relative min-h-screen w-full overflow-hidden">
+        <ParticleBackground />
+        <main className="flex flex-col items-center justify-center min-h-screen w-full relative z-10 px-4">
+          <section className="flex flex-col items-center">
+            <motion.img
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.7 }}
               src={profileImage}
               alt="Jason Balayev"
-              className="h-32 w-32 sm:h-56 sm:w-56 rounded-full shadow-lg border-2 border-gray-200"
+              className="h-32 w-32 sm:h-48 sm:w-48 rounded-full shadow-xl border-4 border-indigo-500 mb-6"
             />
+
+            <h1 className="text-5xl sm:text-6xl font-extrabold text-center text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-purple-500 to-pink-500 mb-4">
+              <TypewriterText text="Jason Balayev" delay={0} />
+            </h1>
+
+            <h2 className="text-2xl sm:text-3xl mt-2 text-center text-gray-300">
+              <TypewriterText
+                text="Computer Science Student @ Northeastern University '27"
+                delay={800}
+                speed={50}
+              />
+            </h2>
+
+            <p className="text-lg sm:text-xl mt-6 text-center text-gray-300 max-w-2xl">
+              Passionate about developing innovative software solutions and exploring the depths of
+              computer science.
+            </p>
+
+            <div className="flex space-x-6 mt-8">
+              <a
+                href="https://github.com/JasonBalayev"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-white transition-colors duration-300"
+              >
+                <FaGithub size={30} />
+              </a>
+              <a
+                href="https://linkedin.com/in/JasonBalayev"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-white transition-colors duration-300"
+              >
+                <FaLinkedin size={30} />
+              </a>
+              
+            </div>
+          </section>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 1.5 }}
+            className="mt-8 animate-bounce"
+          >
+            <FaArrowDown className="text-indigo-500 text-3xl" />
           </motion.div>
 
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl mt-4 text-center">
-            <TypewriterText text="jasonbalayev.dev🔧" delay={0} />
-          </h1>
-          <h2 className="text-xl sm:text-2xl my-4 text-center">
-            <TypewriterText
-              text="Hello, I am Jason Balayev and I am currently studying CS 💻 @ Northeastern University - c/o 27'"
-              delay={800}
-              speed={50}
-            />
-          </h2>
-          <h2 className="text-xl sm:text-xl text-grey-800 text-center mb-4">
-            <TypewriterText
-              text="Click the button below to access source code below within my projects 🛠️"
-              delay={1900}
-              speed={100}
-            />
-          </h2>
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 1 }}
-            className="mx-auto mt-4"
+            className="mt-4"
           >
             <Link to="/projects">
               <Button
                 size="lg"
                 variant="ghost"
-                radius="small"
-                className="text-gray-200 hover:text-black hover:bg-blue-700 text-xl sm:text-2xl p-6 max-w-full"
+                radius="full"
+                className="text-white border-2 border-indigo-500 hover:bg-indigo-500 hover:border-indigo-500 hover:text-white transition-all duration-300"
               >
-                👆
+                View My Projects
               </Button>
             </Link>
           </motion.div>
 
-          <div className="flex flex-wrap justify-center items-center my-8">
-            {[
-              { name: "Python", image: pythonImage },
-              { name: "Java", image: javaImage },
-              { name: "JavaScript", image: javascriptImage },
-              { name: "HTML", image: htmlImage },
-              { name: "CSS", image: cssImage },
-              { name: "Assembly", image: asmImage },
-              { name: "C", image: cImage },
-              { name: "C++", image: cppImage },
-              { name: "Kotlin", image: kotlinImage },
-              { name: "TypeScript", image: typeScriptImage },
-              { name: "Prisma", image: prismaImage },
-              { name: "Lua", image: luaImage }
-              
-            ].map((skill, index) => (
-              <SkillCard key={skill.name} name={skill.name} image={skill.image} delay={index * 0.1} />
-            ))}
-          </div>
-        </motion.div>
+          {/* Skills Section */}
+          <section className="mt-16 w-full px-4">
+            <h3 className="text-2xl sm:text-3xl font-semibold text-center text-white mb-8">
+              Technical Skills
+            </h3>
+            <div className="grid grid-cols-4 sm:grid-cols-5 md:grid-cols-6 gap-6 max-w-5xl mx-auto">
+              {skillsData.map((skill, index) => (
+                <SkillCard
+                  key={skill.name}
+                  name={skill.name}
+                  image={skill.image}
+                  delay={index * 0.1}
+                />
+              ))}
+            </div>
+          </section>
+        </main>
       </div>
     </Layout>
   );
@@ -123,17 +119,21 @@ const IndexPage = () => {
 const SkillCard = ({ name, image, delay }) => {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
+      initial={{ opacity: 0, y: 30 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay }}
-      className="m-2 text-center"
+      className="flex flex-col items-center group"
     >
-      <img src={image} alt={name} className="h-14 w-14 mx-auto mb-1 sm:h-16 sm:w-16" />
-      <p className="text-md sm:text-lg font-semibold text-white">{name}</p>
+      <div className="h-16 w-16 sm:h-20 sm:w-20 bg-gray-800 rounded-2xl flex items-center justify-center shadow-lg group-hover:shadow-xl transform transition-transform duration-300 group-hover:scale-105 mb-3">
+        <img src={image} alt={name} className="h-10 w-10 sm:h-14 sm:w-14" />
+      </div>
+      <p className="text-sm sm:text-base font-medium text-gray-200 group-hover:text-indigo-400 transition-colors duration-300">
+        {name}
+      </p>
     </motion.div>
   );
 };
 
 export default IndexPage;
 
-export const Head = () => <title>JasonDev</title>;
+export const Head = () => <title>Jason Balayev - Portfolio</title>;

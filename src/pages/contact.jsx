@@ -5,104 +5,106 @@ import githubLogo from "../images/github-mark-white.svg";
 import linkedInLogo from "../images/in.png";
 import discordLogo from "../images/disco.png";
 import { motion } from "framer-motion";
-import GlowingText from "../components/GlowingText";  
+import GlowingText from "../components/GlowingText";
 
 const Contact = () => {
   return (
     <Layout>
-      <motion.div
-        initial={{ opacity: 0, scale: 1 }}
-        animate={{ opacity: 1, scale: 1 }}
-        whileHover={{ scale: 1.2 }}
-        transition={{ duration: 0.3 }}
-        className="absolute top-5 right-5 sm:top-8 sm:right-8 z-20"
-      >
-      </motion.div>
+      <div className="relative min-h-screen flex flex-col items-center justify-center px-4 text-white">
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+          className="text-center"
+        >
+          <GlowingText text="Contact Me" />
+          <p className="text-lg sm:text-xl text-gray-300 mt-4">
+            Feel free to reach out for inquiries, collaborations, or just to say hello!
+          </p>
+          <p className="text-sm sm:text-md text-gray-400 mt-2">
+            (You can move "Contact Me" around the page!)
+          </p>
+        </motion.div>
 
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.5 }}
-        className="flex flex-col items-center text-center mt-10 px-4 min-h-screen"
-      >
-        {}
-        <p className="text-xl text-gray-400 mb-10">
-          Select and Drag 'Contact Me' around the page.
-        </p>
-
-        <GlowingText text="Contact Me " />
-
-        {}
-        <p className="text-3xl text-white mb-8 mt-4">
-          Feel free to get in touch with me for any inquiries or collaborations.
-        </p>
-
-        <div className="flex flex-col items-center space-y-6 w-full">
-          {}
-          <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4 w-full">
+    
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, delay: 0.5 }}
+          className="mt-12 flex flex-col items-center space-y-6 w-full"
+        >
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-lg">
             <motion.a
-              whileHover={{ scale: 1.2 }}
+              whileHover={{ scale: 1.05 }}
               href="https://linkedin.com/in/jasonbalayev/"
-              className="w-full sm:w-auto"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full"
             >
               <Button
-                className="glowing-button bg-blue-600 text-white text-md h-14 w-full sm:w-35 flex items-center justify-between"
+                className="flex items-center justify-between bg-blue-600 hover:bg-blue-700 text-white text-md h-14 px-4 rounded-lg transition-all duration-300"
               >
-                @linkedIn
-                <img
-                  src={linkedInLogo}
-                  alt="LinkedIn"
-                  className="h-8 w-9 ml-2"
-                />
+                LinkedIn
+                <img src={linkedInLogo} alt="LinkedIn" className="h-6 ml-3" />
               </Button>
             </motion.a>
 
             <motion.a
-              whileHover={{ scale: 1.2 }}
+              whileHover={{ scale: 1.05 }}
               href="https://github.com/JasonBalayev"
-              className="w-full sm:w-auto"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full"
             >
               <Button
-                className="glowing-button bg-gray-950 text-white text-md h-14 w-full sm:w-35 flex items-center justify-between"
+                className="flex items-center justify-between bg-gray-900 hover:bg-gray-800 text-white text-md h-14 px-4 rounded-lg transition-all duration-300"
               >
-                @gitHub
-                <img
-                  src={githubLogo}
-                  alt="GitHub"
-                  className="h-6 w-6 ml-2"
-                />
+                GitHub
+                <img src={githubLogo} alt="GitHub" className="h-6 ml-3" />
               </Button>
             </motion.a>
 
             <motion.a
-              whileHover={{ scale: 1.2 }}
+              whileHover={{ scale: 1.05 }}
               href="https://discordapp.com/users/1149941204243464222"
-              className="w-full sm:w-auto"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full"
             >
               <Button
-                className="glowing-button bg-blue-600 text-white text-md h-14 w-full sm:w-35 flex items-center justify-between"
+                className="flex items-center justify-between bg-blue-600 hover:bg-blue-700 text-white text-md h-14 px-4 rounded-lg transition-all duration-300"
               >
-                @discordProfile
-                <img
-                  src={discordLogo}
-                  alt="Discord"
-                  className="h-6 w-7 ml-2"
-                />
+                Discord
+                <img src={discordLogo} alt="Discord" className="h-6 ml-3" />
               </Button>
             </motion.a>
           </div>
+        </motion.div>
 
-          {}
-          <div className="text-xl text-white mt-4">
-            <p>School Email 📧: balayev.j@northeastern.edu</p>
-          </div>
+   
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, delay: 1 }}
+          className="mt-12 text-center"
+        >
+          <p className="text-lg sm:text-xl">
+            <span className="font-bold text-indigo-400">School Email:</span> balayev.j@northeastern.edu
+          </p>
+          <p className="text-lg sm:text-xl mt-4">
+            <span className="font-bold text-indigo-400">Personal Email:</span> jasonbalayev@gmail.com
+          </p>
+        </motion.div>
 
-          {}
-          <div className="text-xl text-white mt-4">
-            <p>Personal Email 📧: jasonbalayev@gmail.com</p>
-          </div>
-        </div>
-      </motion.div>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, delay: 1.5 }}
+          className="mt-16"
+        >
+         
+        </motion.div>
+      </div>
     </Layout>
   );
 };

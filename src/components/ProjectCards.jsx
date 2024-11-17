@@ -1,94 +1,82 @@
 import React from "react";
-import { Card, Divider } from "@nextui-org/react";
-import { CardBody, CardFooter, CardHeader } from "@nextui-org/react";
+import { Card } from "@nextui-org/react";
 import { motion } from "framer-motion";
+import { FaExternalLinkAlt } from "react-icons/fa";
 
 const ProjectCard = ({ project }) => {
   return (
-    <Card isBlurred className="bg-blue-800 w-full m-0 relative flex flex-col">
-      <motion.div
-        initial={{ opacity: 0, scale: 1 }}
-        animate={{ opacity: 1, scale: 1 }}
-        whileHover={{ scale: 1.2 }}
-        transition={{ duration: 0.3 }}
-        className="absolute top-3 right-3 z-20"
-      ></motion.div>
-
-      <CardHeader className="flex gap-3">
-        <a href={project.link}>
-          <h1 className="text-[24px] font-sans font-bold text-white drop-shadow-lg">
-            {project.name}
-          </h1>
-        </a>
-      </CardHeader>
-      <Divider />
-      <CardBody className="min-h-[220px] flex flex-col justify-between">
-        <p className="text-xl text-white">{project.description}</p>
-
-        <div className="flex flex-row items-center justify-center mt-auto">
-          {project.name === "AI-Convex 🤖 (Click here for gitHub)" && (
-            <a href={"https://ai-convex-mu.vercel.app/"}>
-              <p className="text-2xl font-bold text-yellow-400 font-sans px-6 py-2 bg-green-600 rounded-lg shadow-lg hover:bg-green-700 transition-all duration-300 mt-2">
-                Check it Out Live
-              </p>
-            </a>
-          )}
-          {project.name === "jasonbalayev.dev 🔧 (Click here for gitHub)" && (
-            <a href="https://jasonbalayev.dev">
-              <p className="text-2xl font-bold text-yellow-400 font-sans px-6 py-2 bg-green-600 rounded-lg shadow-lg hover:bg-green-700 transition-all duration-300 mt-2">
-                Check it Out Live
-              </p>
-            </a>
-          )}
-          {project.name === "Jason's AI Space 🤖 (Click here for gitHub)" && (
-            <a href="https://jasonsai-space.vercel.app/">
-              <p className="text-2xl font-bold text-yellow-400 font-sans px-6 py-2 bg-green-600 rounded-lg shadow-lg hover:bg-green-700 transition-all duration-300 mt-2">
-                Check it Out Live
-              </p>
-            </a>
-          )}
-          {project.name === "AI SaaS FlashSet 🤖 (Click here for gitHub)" && (
-            <a href="https://ai-flashset.vercel.app/">
-              <p className="text-2xl font-bold text-yellow-400 font-sans px-6 py-2 bg-green-600 rounded-lg shadow-lg hover:bg-green-700 transition-all duration-300 mt-2">
-                Check it Out Live
-              </p>
-            </a>
-          )}
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      animate={{ opacity: 1, y: 0 }}
+      whileHover={{ scale: 1.02 }}
+      transition={{ duration: 0.5 }}
+      className="w-full"
+    >
+      <Card
+        isHoverable
+        isPressable
+        className="bg-[#1e1e2f] w-full h-full flex flex-col justify-between p-6 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300"
+        style={{
+          background: "#1e1e2f",
+        }}
+      >
+        <div className="mb-4">
+          <a
+            href={project.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center no-underline hover:no-underline"
+          >
+            <h2 className="text-2xl font-bold text-white">{project.name}</h2>
+            <FaExternalLinkAlt className="ml-2 text-indigo-400" size={18} />
+          </a>
         </div>
-      </CardBody>
-      <Divider />
-      <CardFooter>
-        <div className="flex flex-wrap justify-center items-center w-full">
+
+        <p className="text-base text-gray-300 flex-grow">{project.description}</p>
+
+        {["AI-Convex 🤖", "jasonbalayev.dev 🔧", "Jason's AI Space 🤖", "AI SaaS FlashSet 🤖"].includes(
+          project.name
+        ) && (
+          <div className="mt-6 flex justify-center">
+            <a
+              href={project.liveLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block text-center py-2 px-4 bg-indigo-600 text-white font-semibold rounded-lg hover:bg-indigo-700 transition-colors duration-300"
+            >
+              Check it Out Live
+            </a>
+          </div>
+        )}
+
+        <div className="flex flex-wrap mt-6">
           {project.badges.map((badge) => (
-            <div key={badge}>
-              <Card className="bg-slate-800 m-1">
-                <p className="text-[14px] font-bold text-white mx-2 my-1">
-                  {badge}
-                </p>
-              </Card>
-            </div>
+            <span
+              key={badge}
+              className="text-sm font-medium text-gray-200 bg-gray-800 px-2 py-1 rounded-full mr-2 mb-2"
+            >
+              {badge}
+            </span>
           ))}
           {project.hackathon && (
             <a
               href={project.hackathon.link}
-              aria-label={`Link to ${project.hackathon.name}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm font-medium text-white bg-blue-800 px-2 py-1 rounded-full mr-2 mb-2 hover:bg-blue-700 transition-colors duration-300"
             >
-              <Card className="bg-blue-900 m-1">
-                <p className="text-[16px] text-white font-sans font-bold mx-2 my-1">
-                  {project.hackathon.name}
-                </p>
-              </Card>
+              {project.hackathon.name}
             </a>
           )}
         </div>
-      </CardFooter>
-    </Card>
+      </Card>
+    </motion.div>
   );
 };
 
 const ProjectCards = ({ projects }) => {
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 w-full">
+    <div className="grid gap-6 w-full sm:grid-cols-2 lg:grid-cols-3">
       {projects.map((project) => (
         <ProjectCard key={project.name} project={project} />
       ))}
