@@ -16,12 +16,38 @@ export var projects = [
     liveLink: "https://jasonsai-space.vercel.app/",
   },
   {
-    name: "AI SaaS FlashSet 🤖",
+    name: "Custom C Shell (Private – Request Access Required)",
     description:
-      "AI SaaS Flashcard is an AI-powered software as a service (SaaS) application designed for effortless flashcard creation and management given any prompt by the user. Basic and pro features are currently in test mode. Although the app is a work in progress, it aims to provide an educational experience for learners.",
-    badges: ["Next.js", "Firebase", "JavaScript", "Clerk Auth", "Stripe/OpenAI API"],
-    link: "https://github.com/JasonBalayev/AI-Stripe-SaaS-",
-    liveLink: "https://ai-flashset.vercel.app/",
+      "Created a shell in C with built in custom commands, utilizing efficient system-level design with the C language. Additionally, I used to create and automate test cases for the shell, ensuring optimal performance and reliability. The repository is private, and access can be granted upon request for recruiters or collaborators.",
+    badges: ["Next.js", "Convex", "JavaScript", "OpenAI API"],
+  },
+  {
+    name: "Resume LaTeX Generator 📝",
+    description:
+      "(ONGOING) A collaborative project for the Northeastern Oasis Project Series team. This project focuses on software development for standard resumes converted into a LaTeX document.",
+    badges: ["React.js", "OpenAI API", "TypeScript"],
+    link: "https://github.com/Oasis-NEU/f24-group17",
+  },
+  {
+    name: "Northeastern Electric Racing 🏎️",
+    description:
+      "(ONGOING) A collaborative project contributing to the Northeastern Electric Racing team. This project focuses on software development for electric race car systems, including telemetry, data logging, and optimization algorithms.",
+    badges: ["Express.js", "React.js", "TypeScript", "Prisma", "Docker"],
+    link: "https://github.com/JasonBalayev/Northeastern-Electric-Racing",
+  },
+  {
+    name: "LeetCode Solutions",
+    description:
+      "This repository stores all of my solutions and progress on different LeetCode problems.",
+    badges: ["LeetCode", "Java", "Python"],
+    link: "https://github.com/JasonBalayev/LeetCodeSolutions",
+  },
+  {
+    name: "Monkeypox Visualizer 🦠",
+    description:
+      "(ONGOING) MPOX is an advanced project focused on exploring the impact of viral outbreaks and epidemic modeling using Python. It includes the use of machine learning techniques to predict infection spread based on various parameters.",
+    badges: ["Python", "Django", "OpenAI API", "Postman"],
+    link: "https://github.com/JasonBalayev/MPOX",
   },
   {
     name: "AI-Convex 🤖",
@@ -32,11 +58,12 @@ export var projects = [
     liveLink: "https://ai-convex-mu.vercel.app/",
   },
   {
-    name: "Northeastern Oasis Resume LaTeX Generator 📝",
+    name: "AI SaaS FlashSet 🤖",
     description:
-      "(ONGOING) A collaborative project for the Northeastern Oasis Project Series team. This project focuses on software development for standard resumes converted into a LaTeX document.",
-    badges: ["React.js", "OpenAI API", "TypeScript"],
-    link: "https://github.com/Oasis-NEU/f24-group17",
+      "AI SaaS Flashcard is an AI-powered software as a service (SaaS) application designed for effortless flashcard creation and management given any prompt by the user. Basic and pro features are currently in test mode. Although the app is a work in progress, it aims to provide an educational experience for learners.",
+    badges: ["Next.js", "Firebase", "JavaScript", "Clerk Auth", "Stripe/OpenAI API"],
+    link: "https://github.com/JasonBalayev/AI-Stripe-SaaS-",
+    liveLink: "https://ai-flashset.vercel.app/",
   },
   {
     name: "Android Application 📱",
@@ -46,23 +73,9 @@ export var projects = [
     link: "https://github.com/JasonBalayev/Android-Application",
   },
   {
-    name: "Monkeypox Visualizer 🦠",
+    name: "Minimax Algorithm Through Tic-Tac-Toe",
     description:
-      "(ONGOING) MPOX is an advanced project focused on exploring the impact of viral outbreaks and epidemic modeling using Python. It includes the use of machine learning techniques to predict infection spread based on various parameters.",
-    badges: ["Python", "Django", "OpenAI API", "Postman"],
-    link: "https://github.com/JasonBalayev/MPOX",
-  },
-  {
-    name: "Northeastern Electric Racing 🏎️",
-    description:
-      "(ONGOING) A collaborative project contributing to the Northeastern Electric Racing team. This project focuses on software development for electric race car systems, including telemetry, data logging, and optimization algorithms.",
-    badges: ["Express.js", "React.js", "TypeScript", "Prisma", "Docker"],
-    link: "https://github.com/JasonBalayev/Northeastern-Electric-Racing",
-  },
-  {
-    name: "Minimax Algorithm Through Tic-Tac-Toe ❌⭕",
-    description:
-      "A simple Tic-Tac-Toe game built using Python, HTML, CSS, and JavaScript. This project showcases basic game logic implementation and interactive UI design for two players. Using JavaScript to incorporate the minimax algorithm to win at all times in a standard 3x3 match, and use the best possible moves in a 4x4, 5x5, etc. Formula that I followed: v_i = max_{a_i} min_{a_{-i}} v_i(a_i, a_{-i})",
+      "A simple Tic-Tac-Toe game built using Python, HTML, CSS, and JavaScript. This project showcases basic game logic implementation and interactive UI design for two players. Using JavaScript to incorporate the minimax algorithm to win at all times in a standard 3x3 match, and use the best possible moves in a 4x4 and 5x5.",
     badges: ["Python", "HTML", "CSS", "JavaScript", "Django"],
     link: "https://github.com/JasonBalayev/Tic-Tac-Toe",
   },

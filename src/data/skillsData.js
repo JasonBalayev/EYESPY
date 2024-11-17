@@ -22,7 +22,7 @@ const skillsData = [
   { name: "C++", image: cppImage },
   { name: "Kotlin", image: kotlinImage },
   { name: "Lua", image: luaImage },
-  { name: "Prisma", image: prismaImage },
+  { name: "Prisma (ORM)", image: prismaImage },
   { name: "Assembly", image: asmImage },
 ];
 

@@ -1,4 +1,3 @@
-// components/ThreeBackground.jsx
 import React, { useEffect, useRef } from 'react';
 import * as THREE from 'three';
 
@@ -18,13 +17,12 @@ const ThreeBackground = () => {
       currentMount.appendChild(renderer.domElement);
     }
 
-    // Basic Particles Setup
-    const particleCount = 1000; // Use fewer particles for simplicity
+    const particleCount = 1000; 
     const particles = new THREE.BufferGeometry();
     const particlePositions = new Float32Array(particleCount * 3);
 
     for (let i = 0; i < particleCount; i++) {
-      const x = THREE.MathUtils.randFloatSpread(500); // Smaller spread
+      const x = THREE.MathUtils.randFloatSpread(500);
       const y = THREE.MathUtils.randFloatSpread(500);
       const z = THREE.MathUtils.randFloatSpread(500);
 
@@ -32,14 +30,14 @@ const ThreeBackground = () => {
       particlePositions[i * 3 + 1] = y;
       particlePositions[i * 3 + 2] = z;
 
-      console.log(`Particle ${i}: x=${x}, y=${y}, z=${z}`); // Debug particle positions
+      console.log(`Particle ${i}: x=${x}, y=${y}, z=${z}`);
     }
 
     particles.setAttribute('position', new THREE.BufferAttribute(particlePositions, 3));
 
     const particleMaterial = new THREE.PointsMaterial({
-      color: 0xffffff, // Make particles white for better visibility
-      size: 5, // Increase size for visibility
+      color: 0xffffff, 
+      size: 5, 
       transparent: true,
       opacity: 0.8,
     });
