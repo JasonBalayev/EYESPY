@@ -14,8 +14,8 @@ import asmImage from "../images/asm.jpg";
 const skillsData = [
   { name: "Python", image: pythonImage },
   { name: "Java", image: javaImage },
-  { name: "JavaScript", image: javascriptImage },
-  { name: "TypeScript", image: typeScriptImage },
+  { name: "JS", image: javascriptImage },
+  { name: "TS", image: typeScriptImage },
   { name: "HTML", image: htmlImage },
   { name: "CSS", image: cssImage },
   { name: "C", image: cImage },
