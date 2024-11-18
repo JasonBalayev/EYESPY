@@ -15,8 +15,10 @@ const Contact = () => {
         >
           <GlowingText text="Contact Jason Balayev" />
           <p className="text-lg sm:text-xl text-gray-300 mt-4">
-            Feel free to reach out for inquiries, collaborations, or just to say hello!
-          </p>
+              Sophomore @ Northeastern University actively seeking part-time internships in the Bay Area, California.  
+              <br />  
+              Open to opportunities for January–June or June–September of the 2025 season.
+            </p>
           <p className="text-sm sm:text-md text-gray-400 mt-2">
             (You can move "Contact Jason Balayev" around!)
           </p>
@@ -75,9 +77,6 @@ const Contact = () => {
           transition={{ duration: 1, delay: 1.5 }}
           className="mt-16 text-center"
         >
-          <p className="text-lg sm:text-xl font-semibold text-indigo-400">
-            Looking forward to hearing from you!
-          </p>
         </motion.div>
       </div>
     </Layout>
