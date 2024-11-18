@@ -61,7 +61,7 @@ const ProjectCard = ({ project }) => {
 
           <div className="mt-4 text-center">
             <span className="text-sm font-medium text-gray-400">
-              Click the title on the card for GitHub
+              Click the title on the card for GitHub if public
             </span>
           </div>
         </Card>
@@ -73,14 +73,7 @@ const ProjectCard = ({ project }) => {
 const ProjectCards = ({ projects }) => {
   return (
     <div
-      className="grid gap-6 w-full"
-      style={{
-        gridTemplateColumns: "repeat(auto-fit, minmax(400px, 1fr))",
-        gridAutoRows: "minmax(200px, auto)",
-        marginTop: "80px",
-        paddingLeft: "20px",
-        paddingRight: "20px",
-      }}
+      className="grid gap-6 w-full mt-20 px-5 grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
     >
       {projects.map((project) => (
         <ProjectCard key={project.name} project={project} />
