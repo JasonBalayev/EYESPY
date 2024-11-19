@@ -1,5 +1,6 @@
 import React from "react";
-import { Card } from "@nextui-org/react";
+import { Card, Divider } from "@nextui-org/react";
+import { CardBody, CardFooter, CardHeader } from "@nextui-org/react";
 import { motion } from "framer-motion";
 
 const ProjectCard = ({ project }) => {
@@ -10,73 +11,89 @@ const ProjectCard = ({ project }) => {
       transition={{ duration: 0.5 }}
       className="w-full h-full flex"
     >
-      <a
-        href={project.link}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="w-full h-full no-underline"
+      <Card
+        isBlurred
+        isHoverable
+        isPressable
+        className="w-full flex flex-col justify-between rounded-xl border border-indigo-500 transition-shadow duration-300 hover:bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500"
+        style={{
+          height: "100%",
+          minHeight: "250px",
+          overflow: "hidden",
+        }}
       >
-        <Card
-          isHoverable
-          isPressable
-          className="bg-[#1e1e2f] flex flex-col justify-between p-6 rounded-xl border-2 border-indigo-500 transition-shadow duration-300"
-          style={{
-            background: "#1e1e2f",
-            height: "100%",
-            minHeight: "200px",
-            overflow: "hidden",
-          }}
-        >
-          <div className="mb-4">
-            <h2 className="text-2xl font-bold text-white">{project.name}</h2>
-          </div>
-
-          <p className="text-base text-gray-300 flex-grow">
+        <CardHeader className="flex gap-3">
+          <a href={project.link} className="no-underline">
+            <h1 className="text-3xl font-poppins font-bold text-gray-200 group-hover:text-white drop-shadow-lg">
+              {project.name}
+            </h1>
+          </a>
+        </CardHeader>
+        <Divider />
+        <CardBody className="flex flex-col justify-between">
+          <p className="text-lg font-poppins text-gray-300 flex-grow">
             {project.description}
           </p>
-
-          {project.liveLink && (
-            <div className="mt-4 flex justify-center">
+          <div className="flex flex-row items-center justify-center mt-4">
+            {project.link && (
+              <a
+                href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-4"
+              ></a>
+            )}
+            {project.liveLink && (
               <a
                 href={project.liveLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block text-center text-indigo-400 font-semibold underline hover:text-indigo-300 transition-colors duration-300"
+                className="px-4"
               >
-                Check it Out Live
+                <button className="px-4 py-2 text-lg font-bold font-poppins text-white bg-indigo-600 rounded-lg shadow-lg hover:bg-pink-500 transition-all duration-300">
+                  Check it out live
+                </button>
               </a>
+            )}
+          </div>
+        </CardBody>
+        <Divider />
+        <CardFooter className="flex flex-wrap justify-center items-center">
+          {project.badges.map((badge) => (
+            <div key={badge}>
+              <Card className="bg-indigo-600 m-1 hover:bg-pink-500">
+                <p className="text-md font-bold font-poppins text-gray-200 mx-2 my-1">
+                  {badge}
+                </p>
+              </Card>
             </div>
+          ))}
+          {project.hackathon && (
+            <a
+              href={project.hackathon.link}
+              aria-label={`Link to ${project.hackathon.name}`}
+              className="no-underline"
+            >
+              <Card className="bg-purple-700 m-1 hover:bg-indigo-500">
+                <p className="text-lg text-gray-200 font-poppins font-bold mx-2 my-1">
+                  {project.hackathon.name}
+                </p>
+              </Card>
+            </a>
           )}
-
-          <div className="flex flex-wrap mt-4">
-            {project.badges.map((badge) => (
-              <span
-                key={badge}
-                className="text-sm font-medium text-gray-200 bg-gray-800 px-2 py-1 rounded-full mr-2 mb-2"
-              >
-                {badge}
-              </span>
-            ))}
-          </div>
-
-          <div className="mt-4 text-center">
-            <span className="text-sm font-medium text-gray-400">
-              Click the title on the card for GitHub if public
-            </span>
-          </div>
-        </Card>
-      </a>
+        </CardFooter>
+      </Card>
     </motion.div>
   );
 };
 
 const ProjectCards = ({ projects }) => {
   return (
-    <div
-      className="grid gap-6 w-full mt-20 px-5 grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
-    >
+    <div className="grid gap-6 w-full mt-20 px-5 grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
       {projects.map((project) => (
-        <ProjectCard key={project.name} project={project} />
+        <div key={project.name}>
+          <ProjectCard project={project} />
+        </div>
       ))}
     </div>
   );
