@@ -3,7 +3,7 @@ export var projects = [
     name: "Portfolio 🔧 (Click here for github)",
     description:
       "jasonbalayev.dev is a portfolio website that I created using React.js showcasing my skills within front-end, back-end development, and general programming skills through projects. This website was built using Gatsby.js, Javascript, and Tailwind CSS, and hosted on Netlify for optimal performance.",
-    badges: ["React,js", "Gatsby.js", "Three.js", "Tailwind CSS", "Javascript", "Git/Github"],
+    badges: ["React.js", "Gatsby.js", "Three.js", "Tailwind CSS", "Javascript", "Git/Github"],
     link: "https://github.com/JasonBalayev/jasonbalayev.dev",
     liveLink: "https://jasonbalayev.dev",
   },
