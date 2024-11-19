@@ -34,13 +34,12 @@ const ProjectCard = ({ project }) => {
           <p className="text-lg font-poppins text-gray-300 flex-grow">
             {project.description}
           </p>
-          <div className="flex flex-row items-center justify-center mt-4">
+          <div className="flex items-center justify-center mt-4">
             {project.link && (
               <a
                 href={project.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-4"
               ></a>
             )}
             {project.liveLink && (
@@ -48,7 +47,6 @@ const ProjectCard = ({ project }) => {
                 href={project.liveLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-4"
               >
                 <button className="px-4 py-2 text-lg font-bold font-poppins text-white bg-indigo-600 rounded-lg shadow-lg hover:bg-pink-500 transition-all duration-300">
                   Check it out live
