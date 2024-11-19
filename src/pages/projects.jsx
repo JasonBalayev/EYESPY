@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 
 const Projects = () => {
   return (
-    <div className="bg-black min-h-screen">
+    <div className="bg-grey min-h-screen">
       <Layout>
         <motion.div
           initial={{ opacity: 0 }}
