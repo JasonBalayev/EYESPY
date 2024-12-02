@@ -22,8 +22,8 @@ const Navbar = () => {
           <Link
             key={page[0]}
             to={page[0]}
-            className="text-white text-xl hover:text-purple-400 transition-colors duration-300"
-            activeClassName="font-bold text-purple-400"
+            className="text-white text-xl hover:bg-indigo-500 transition-colors duration-300 px-2 py-1 rounded"
+            activeClassName="font-bold bg-indigo-500"
           >
             {page[1]}
           </Link>
@@ -36,9 +36,9 @@ const Navbar = () => {
             <Link
               key={page[0] + " mobile"}
               to={page[0]}
-              className="block py-2 px-4 text-gray-300 text-lg hover:bg-gray-700 hover:text-purple-400 transition-all duration-300"
-              activeClassName="font-bold text-purple-400"
-              onClick={() => setIsMenuOpen(false)} // Close menu on link click
+              className="block py-2 px-4 text-gray-300 text-lg hover:bg-indigo-500 hover:text-white transition-all duration-300"
+              activeClassName="font-bold bg-indigo-500 text-white"
+              onClick={() => setIsMenuOpen(false)} 
             >
               {page[1]}
             </Link>

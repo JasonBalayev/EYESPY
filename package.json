@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "description": "my-portfolio",
-  "author": "Anish Sahoo",
+  "author": "Jason Balayev",
   "keywords": [
     "gatsby"
   ],
@@ -27,6 +27,7 @@
     "framer-motion": "^10.18.0",
     "gatsby": "^5.12.12",
     "gatsby-plugin-postcss": "^6.13.0",
+    "gatsby-plugin-transition-link": "^1.20.5",
     "gatsby-source-filesystem": "^5.13.0",
     "hamburger-react": "^2.5.0",
     "postcss": "^8.4.32",
