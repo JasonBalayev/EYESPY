@@ -30,9 +30,6 @@ const Contact = () => {
               <br />  
               Open to opportunities for January–June or May–August of the 2025 season.
             </p>
-            <p className="text-sm sm:text-md text-gray-400 mt-2">
-              (You can move "Contact Jason Balayev" around!)
-            </p>
           </motion.div>
 
           <motion.div
