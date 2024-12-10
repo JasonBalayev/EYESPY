@@ -1,31 +1,40 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
-const NeonText = ({ text, delay, duration }) => {
-  const [isVisible, setIsVisible] = useState(false);
+const TypewriterText = ({ text, delay = 0, speed = 50 }) => {
+  const [displayedText, setDisplayedText] = useState("");
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [startTyping, setStartTyping] = useState(false);
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsVisible(true);
+    const startDelay = setTimeout(() => {
+      setStartTyping(true);
     }, delay);
 
-    return () => clearTimeout(timer);
+    return () => clearTimeout(startDelay);
   }, [delay]);
 
+  useEffect(() => {
+    if (startTyping && currentIndex < text.length) {
+      const timeout = setTimeout(() => {
+        setDisplayedText(prev => prev + text[currentIndex]);
+        setCurrentIndex(prev => prev + 1);
+      }, speed);
+
+      return () => clearTimeout(timeout);
+    }
+  }, [currentIndex, text, speed, startTyping]);
+
   return (
-    <motion.div
-      style={{ opacity: isVisible ? 1 : 0 }}
-      initial={{ opacity: 0, scale: 0.8 }}
-      animate={{ opacity: 1, scale: 1 }}
-      transition={{
-        duration: duration,
-        ease: "easeInOut",
-        opacity: { duration: 0.3 },
-      }}
+    <motion.span
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.3 }}
     >
-      {text}
-    </motion.div>
+      {displayedText}
+      {currentIndex < text.length && <span className="animate-pulse">|</span>}
+    </motion.span>
   );
 };
 
-export default NeonText;
+export default TypewriterText;

@@ -1,6 +1,4 @@
 import React from "react";
-import { Card, Divider } from "@nextui-org/react";
-import { CardBody, CardFooter, CardHeader } from "@nextui-org/react";
 import { motion } from "framer-motion";
 
 const ProjectCard = ({ project }) => {
@@ -9,78 +7,68 @@ const ProjectCard = ({ project }) => {
       initial={{ opacity: 0, y: 30 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
-      className="w-full h-full flex"
+      className="relative p-6 bg-black bg-opacity-40 rounded-xl border border-white border-opacity-10 hover:border-indigo-500 transition-all duration-300 h-full flex flex-col"
+      whileHover={{ y: -5, scale: 1.02 }}
     >
-      <Card
-        isBlurred
-        isHoverable
-        isPressable
-        className="w-full flex flex-col justify-between rounded-xl border border-indigo-500 transition-shadow duration-300 hover:bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500"
-        style={{
-          height: "100%",
-          minHeight: "250px",
-          overflow: "hidden",
-        }}
-      >
-        <CardHeader className="flex gap-3">
-          <a href={project.link} className="no-underline">
-            <h1 className="text-3xl font-poppins font-bold text-gray-200 group-hover:text-white drop-shadow-lg">
-              {project.name}
-            </h1>
-          </a>
-        </CardHeader>
-        <Divider />
-        <CardBody className="flex flex-col justify-between">
-          <p className="text-lg font-poppins text-gray-300 flex-grow">
-            {project.description}
-          </p>
-          <div className="flex items-center justify-center mt-4">
-            {project.link && (
-              <a
-                href={project.link}
-                target="_blank"
-                rel="noopener noreferrer"
-              ></a>
-            )}
-            {project.liveLink && (
-              <a
-                href={project.liveLink}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <button className="px-4 py-2 text-lg font-bold font-poppins text-white bg-indigo-600 rounded-lg shadow-lg hover:bg-pink-500 transition-all duration-300">
-                  Check it out live
-                </button>
-              </a>
-            )}
+      {/* Title */}
+      <a href={project.link} className="no-underline">
+        <motion.h1 
+          className="text-2xl font-bold text-gray-200 mb-4"
+          whileHover={{ scale: 1.01 }}
+        >
+          {project.name}
+        </motion.h1>
+      </a>
+
+      {/* Description */}
+      <p className="text-base text-gray-400 flex-grow">
+        {project.description}
+      </p>
+
+      {/* Bottom Section */}
+      <div className="mt-6">
+        {/* Live Demo Button */}
+        {project.liveLink && (
+          <div className="flex justify-center mb-4">
+            <motion.a
+              href={project.liveLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ scale: 1.05 }}
+            >
+              <button className="px-4 py-2 text-base font-semibold text-white bg-indigo-600 rounded-lg shadow-lg hover:bg-indigo-500 transition-all duration-300">
+                View Live Demo
+              </button>
+            </motion.a>
           </div>
-        </CardBody>
-        <Divider />
-        <CardFooter className="flex flex-wrap justify-center items-center">
+        )}
+
+        {/* Tags */}
+        <div className="flex flex-wrap gap-2">
           {project.badges.map((badge) => (
-            <div key={badge}>
-              <Card className="bg-indigo-600 m-1 hover:bg-pink-500">
-                <p className="text-md font-bold font-poppins text-gray-200 mx-2 my-1">
-                  {badge}
-                </p>
-              </Card>
-            </div>
+            <motion.div 
+              key={badge}
+              className="px-3 py-1 text-sm text-gray-200 bg-black bg-opacity-40 rounded-full border border-white border-opacity-10 hover:border-indigo-500 transition-all duration-300"
+              whileHover={{ scale: 1.05 }}
+            >
+              {badge}
+            </motion.div>
           ))}
+          
           {project.hackathon && (
-            <a
+            <motion.a
               href={project.hackathon.link}
               aria-label={`Link to ${project.hackathon.name}`}
               className="no-underline"
+              whileHover={{ scale: 1.05 }}
             >
-              <Card className="bg-purple-700 m-1 hover:bg-indigo-500">
-                <p className="text-lg text-gray-200 font-poppins font-bold mx-2 my-1">
-                  {project.hackathon.name}
-                </p>
-              </Card>
-            </a>
+              <div className="px-3 py-1 text-sm text-gray-200 bg-black bg-opacity-40 rounded-full border border-indigo-500 hover:bg-indigo-500/20 transition-all duration-300">
+                {project.hackathon.name}
+              </div>
+            </motion.a>
           )}
-        </CardFooter>
-      </Card>
+        </div>
+      </div>
     </motion.div>
   );
 };

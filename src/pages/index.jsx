@@ -5,19 +5,16 @@ import TypewriterText from "../components/TypewriterText";
 import { Link } from "gatsby";
 import { motion } from "framer-motion";
 import profileImage from "../images/Jason.jpg";
-
-import { FaArrowDown } from "react-icons/fa";
-import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { FaArrowDown, FaGithub, FaLinkedin, FaCode, FaLaptopCode, FaServer, FaCog, FaTerminal } from "react-icons/fa";
 import ParticleBackground from "../components/ParticleBackground";
 import skillsData from "../data/skillsData.js";
+import AnimatedStars from "../components/AnimatedStars";
 
 const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
-    transition: {
-      staggerChildren: 0.3, 
-    },
+    transition: { staggerChildren: 0.3 },
   },
 };
 
@@ -30,40 +27,77 @@ const IndexPage = () => {
   return (
     <Layout>
       <div className="relative min-h-screen w-full overflow-hidden">
+        <AnimatedStars />
         <ParticleBackground />
         <motion.main
-          className="flex flex-col items-center justify-center min-h-screen w-full relative z-10 px-4"
+          className="flex flex-col items-center justify-center min-h-screen w-full relative z-10 px-4 max-w-7xl mx-auto"
           variants={containerVariants}
           initial="hidden"
           animate="visible"
         >
-          <motion.section
-            className="flex flex-col items-center"
-            variants={childVariants}
-          >
+          <motion.section className="flex flex-col items-center w-full">
             <motion.img
               src={profileImage}
               alt="Jason Balayev"
-              className="h-32 w-32 sm:h-48 sm:w-48 rounded-full shadow-xl border-4 border-indigo-500 mb-6"
+              className="h-32 w-32 sm:h-40 sm:w-40 md:h-48 md:w-48 rounded-full shadow-xl border-4 border-indigo-500 mb-6"
+              variants={childVariants}
             />
 
-            <h1 className="text-5xl sm:text-6xl font-extrabold text-center text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-purple-500 to-pink-500 mb-4">
-              <TypewriterText text="Jason Balayev" delay={0} />
-            </h1>
+            <div className="relative w-full text-center">
+              <h1 className="relative text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-purple-500 to-pink-500 [text-shadow:_0_0_30px_rgb(99_102_241_/_0.3)] animate-pulse">
+                  <TypewriterText text="Jason Balayev" delay={0} speed={100} />
+                </span>
+              </h1>
+            </div>
 
-            <h2 className="text-2xl sm:text-3xl mt-2 text-center text-gray-300">
+            <h2 className="text-xl sm:text-2xl md:text-3xl mt-2 text-center text-gray-300 flex items-center justify-center gap-3">
+              <motion.div
+                animate={{ opacity: [0, 1] }}
+                transition={{ duration: 0.5, delay: 1.5 }}
+              >
+                <FaTerminal className="text-indigo-400" />
+              </motion.div>
               <TypewriterText
                 text="Computer Science Student @ Northeastern University '27"
-                delay={800}
+                delay={1500}
                 speed={50}
               />
             </h2>
 
-            <p className="text-lg sm:text-xl mt-6 text-center text-gray-300 max-w-2xl">
-              Passionate about developing innovative software projects and
-              exploring the world of computer science.
-            </p>
+            <motion.div 
+              className="text-base sm:text-lg md:text-xl mt-6 text-center text-gray-300 max-w-2xl relative"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.6, delay: 4 }}
+            >
+              <TypewriterText
+                text="Passionate about developing innovative software projects and exploring the world of computer science."
+                delay={4000}
+                speed={30}
+              />
+            </motion.div>
 
+            {/* Feature Boxes */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 mt-12 w-full max-w-5xl">
+              <FeatureBox
+                icon={<FaCode />}
+                title="Software Development"
+                description="Building robust applications"
+              />
+              <FeatureBox
+                icon={<FaLaptopCode />}
+                title="Full Stack"
+                description="End-to-end solutions"
+              />
+              <FeatureBox
+                icon={<FaServer />}
+                title="System Design"
+                description="Scalable architectures"
+              />
+            </div>
+
+            {/* Rest of the content */}
             <div className="flex space-x-6 mt-8">
               <a
                 href="https://github.com/JasonBalayev"
@@ -71,7 +105,7 @@ const IndexPage = () => {
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-white transition-colors duration-300"
               >
-                <FaGithub size={30} />
+                <FaGithub className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8" />
               </a>
               <a
                 href="https://linkedin.com/in/JasonBalayev"
@@ -79,48 +113,42 @@ const IndexPage = () => {
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-white transition-colors duration-300"
               >
-                <FaLinkedin size={30} />
+                <FaLinkedin className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8" />
               </a>
             </div>
-          </motion.section>
 
-          <motion.div
-            className="mt-8 animate-bounce"
-            variants={childVariants}
-          >
-            <FaArrowDown className="text-indigo-500 text-3xl" />
-          </motion.div>
+            <motion.div className="mt-8 animate-bounce" variants={childVariants}>
+              <FaArrowDown className="text-indigo-500 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8" />
+            </motion.div>
 
-          <motion.div className="mt-4" variants={childVariants}>
-            <Link to="/projects">
-              <Button
-                size="lg"
-                variant="ghost"
-                radius="full"
-                className="text-white border-2 border-indigo-500 hover:bg-indigo-500 hover:border-indigo-500 hover:text-white transition-all duration-300"
-              >
-                View My Projects
-              </Button>
-            </Link>
-          </motion.div>
+            <motion.div className="mt-4" variants={childVariants}>
+              <Link to="/projects">
+                <Button
+                  size="lg"
+                  variant="ghost"
+                  radius="full"
+                  className="text-white border-2 border-indigo-500 hover:bg-indigo-500 hover:border-indigo-500 hover:text-white transition-all duration-300 text-base sm:text-lg md:text-xl px-6 py-2 sm:px-8 sm:py-3"
+                >
+                  View My Projects
+                </Button>
+              </Link>
+            </motion.div>
 
-          <motion.section
-            className="mt-16 w-full px-4"
-            variants={childVariants}
-          >
-            <h3 className="text-2xl sm:text-3xl font-semibold text-center text-white mb-8">
-              Programming Languages
-            </h3>
-            <div className="grid grid-cols-4 sm:grid-cols-5 md:grid-cols-6 gap-6 max-w-5xl mx-auto">
-              {skillsData.map((skill, index) => (
-                <SkillCard
-                  key={skill.name}
-                  name={skill.name}
-                  image={skill.image}
-                  delay={index * 0.1}
-                />
-              ))}
-            </div>
+            <motion.section className="mt-16 w-full" variants={childVariants}>
+              <h3 className="text-xl sm:text-2xl md:text-3xl font-semibold text-center text-white mb-8">
+                Programming Languages
+              </h3>
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 sm:gap-6 max-w-5xl mx-auto">
+                {skillsData.map((skill, index) => (
+                  <SkillCard
+                    key={skill.name}
+                    name={skill.name}
+                    image={skill.image}
+                    delay={index * 0.1}
+                  />
+                ))}
+              </div>
+            </motion.section>
           </motion.section>
         </motion.main>
       </div>
@@ -128,20 +156,35 @@ const IndexPage = () => {
   );
 };
 
+const FeatureBox = ({ icon, title, description }) => (
+  <motion.div
+    className="relative p-6 bg-black bg-opacity-40 rounded-xl border border-white border-opacity-10 hover:border-indigo-500 transition-all duration-300"
+    whileHover={{ y: -5 }}
+    transition={{ duration: 0.2 }}
+  >
+    <div className="text-indigo-400 text-2xl sm:text-3xl mb-4">{icon}</div>
+    <h3 className="text-lg sm:text-xl font-semibold text-white mb-2">{title}</h3>
+    <p className="text-sm sm:text-base text-gray-400">{description}</p>
+  </motion.div>
+);
+
 const SkillCard = ({ name, image, delay }) => {
   return (
     <motion.div
       initial="hidden"
       animate="visible"
       variants={childVariants}
-      className="flex flex-col items-center group"
+      className="group relative"
+      whileHover={{ scale: 1.05 }}
     >
-      <div className="h-16 w-16 sm:h-20 sm:w-20 bg-gray-800 rounded-2xl flex items-center justify-center shadow-lg group-hover:shadow-xl transform transition-transform duration-300 group-hover:scale-105 mb-3">
-        <img src={image} alt={name} className="h-10 w-10 sm:h-14 sm:w-14" />
+      <div className="relative p-4 bg-black bg-opacity-40 rounded-xl border border-white border-opacity-10 group-hover:border-indigo-500 transition-all duration-300">
+        <div className="flex flex-col items-center">
+          <img src={image} alt={name} className="h-8 w-8 sm:h-10 sm:w-10 md:h-12 md:w-12 mb-3" />
+          <p className="text-xs sm:text-sm md:text-base font-medium text-gray-200 group-hover:text-indigo-400 transition-colors duration-300">
+            {name}
+          </p>
+        </div>
       </div>
-      <p className="text-sm sm:text-base font-medium text-gray-200 group-hover:text-indigo-400 transition-colors duration-300">
-        {name}
-      </p>
     </motion.div>
   );
 };
