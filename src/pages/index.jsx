@@ -4,10 +4,8 @@ import { Button } from "@nextui-org/button";
 import TypewriterText from "../components/TypewriterText";
 import { Link } from "gatsby";
 import { motion } from "framer-motion";
-import profileImage from "../images/Jason.jpg";
-import { FaArrowDown, FaGithub, FaLinkedin, FaCode, FaLaptopCode, FaServer, FaCog, FaTerminal } from "react-icons/fa";
-import ParticleBackground from "../components/ParticleBackground";
-import skillsData from "../data/skillsData.js";
+import profileImage from "../images/professional/Jason.jpg";
+import { FaArrowDown, FaGithub, FaLinkedin, FaCode, FaLaptopCode, FaServer, FaTerminal } from "react-icons/fa";
 import AnimatedStars from "../components/AnimatedStars";
 
 const containerVariants = {
@@ -26,9 +24,9 @@ const childVariants = {
 const IndexPage = () => {
   return (
     <Layout>
-      <div className="relative min-h-screen w-full overflow-hidden">
+      <div className="relative min-h-screen w-full overflow-y-auto pb-20">
         <AnimatedStars />
-        <ParticleBackground />
+       
         <motion.main
           className="flex flex-col items-center justify-center min-h-screen w-full relative z-10 px-4 max-w-7xl mx-auto"
           variants={containerVariants}
@@ -117,11 +115,12 @@ const IndexPage = () => {
               </a>
             </div>
 
+            {/* Arrow and Buttons */}
             <motion.div className="mt-8 animate-bounce" variants={childVariants}>
               <FaArrowDown className="text-indigo-500 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8" />
             </motion.div>
 
-            <motion.div className="mt-4" variants={childVariants}>
+            <motion.div className="mt-4 flex gap-4" variants={childVariants}>
               <Link to="/projects">
                 <Button
                   size="lg"
@@ -132,23 +131,17 @@ const IndexPage = () => {
                   View My Projects
                 </Button>
               </Link>
+              <Link to="/about">
+                <Button
+                  size="lg"
+                  variant="ghost"
+                  radius="full"
+                  className="text-white border-2 border-indigo-500 hover:bg-indigo-500 hover:border-indigo-500 hover:text-white transition-all duration-300 text-base sm:text-lg md:text-xl px-6 py-2 sm:px-8 sm:py-3"
+                >
+                  About Me
+                </Button>
+              </Link>
             </motion.div>
-
-            <motion.section className="mt-16 w-full" variants={childVariants}>
-              <h3 className="text-xl sm:text-2xl md:text-3xl font-semibold text-center text-white mb-8">
-                Programming Languages
-              </h3>
-              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 sm:gap-6 max-w-5xl mx-auto">
-                {skillsData.map((skill, index) => (
-                  <SkillCard
-                    key={skill.name}
-                    name={skill.name}
-                    image={skill.image}
-                    delay={index * 0.1}
-                  />
-                ))}
-              </div>
-            </motion.section>
           </motion.section>
         </motion.main>
       </div>
@@ -168,26 +161,7 @@ const FeatureBox = ({ icon, title, description }) => (
   </motion.div>
 );
 
-const SkillCard = ({ name, image, delay }) => {
-  return (
-    <motion.div
-      initial="hidden"
-      animate="visible"
-      variants={childVariants}
-      className="group relative"
-      whileHover={{ scale: 1.05 }}
-    >
-      <div className="relative p-4 bg-black bg-opacity-40 rounded-xl border border-white border-opacity-10 group-hover:border-indigo-500 transition-all duration-300">
-        <div className="flex flex-col items-center">
-          <img src={image} alt={name} className="h-8 w-8 sm:h-10 sm:w-10 md:h-12 md:w-12 mb-3" />
-          <p className="text-xs sm:text-sm md:text-base font-medium text-gray-200 group-hover:text-indigo-400 transition-colors duration-300">
-            {name}
-          </p>
-        </div>
-      </div>
-    </motion.div>
-  );
-};
+
 
 export default IndexPage;
 

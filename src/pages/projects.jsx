@@ -3,13 +3,11 @@ import Layout from "./layout";
 import ProjectCards from "../components/ProjectCards";
 import { projects } from "../components/projects";
 import { motion } from "framer-motion";
-import AnimatedStars from "../components/AnimatedStars";
 import TypewriterText from "../components/TypewriterText";
 
 const Projects = () => {
   return (
-    <div className="bg-[#0a0a0a] min-h-screen relative overflow-hidden">
-      <AnimatedStars />
+    <div className="bg-[#0a0a0a] min-h-screen relative overflow-y-auto pb-32">
       <Layout>
         <motion.div
           initial={{ opacity: 0 }}

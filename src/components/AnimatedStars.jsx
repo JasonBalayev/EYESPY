@@ -69,7 +69,7 @@ const AnimatedStars = () => {
         ctx.arc(star.x, star.y, star.size * 2, 0, Math.PI * 2);
         ctx.fill();
 
-        // Optional: Add connecting lines between nearby stars
+      
         stars.forEach(otherStar => {
           const distance = Math.hypot(star.x - otherStar.x, star.y - otherStar.y);
           if (distance < 100) {

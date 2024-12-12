@@ -56,7 +56,7 @@ export var projects = [
     name: "Monkeypox Visualizer 🦠 (Click here for github)",
     description:
       "(ONGOING) MPOX is an advanced project focused on exploring the impact of viral outbreaks and epidemic modeling using Python. It includes the use of machine learning techniques to predict infection spread based on various parameters.",
-    badges: ["Python", "Django", "OpenAI API", "Postman", "Three.js", "Git/Github"],
+    badges: ["Python", "Django", "OpenAI API", "Postman", "Git/Github"],
     link: "https://github.com/JasonBalayev/MPOX",
   },
 
