@@ -70,7 +70,7 @@ const IndexPage = () => {
               transition={{ duration: 0.6, delay: 4 }}
             >
               <TypewriterText
-                text="Passionate about developing innovative software projects and exploring the world of computer science."
+                text="Developing projects one commit at a time."
                 delay={4000}
                 speed={30}
               />
