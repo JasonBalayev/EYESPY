@@ -9,7 +9,7 @@ body {
   width: 100%;
   background: #0f0f0f;
   color: #ffffff;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Inter', monospace;
   scroll-behavior: smooth;
 }
 
@@ -53,6 +53,7 @@ h3,
 h4,
 h5,
 h6 {
+  font-family: 'Inter', monospace;
   letter-spacing: -0.025em;
 }
 
@@ -78,4 +79,30 @@ p {
 
 .project-container {
   margin-top: 60px; /* Same height as navbar */
+}
+
+/* Add these styles */
+a, button, [role="button"], input, select, textarea {
+  cursor: none !important;
+}
+
+/* Optional: Add this if you want to ensure the cursor is hidden everywhere */
+* {
+  cursor: none !important;
+}
+
+/* Add specific font classes if needed */
+.font-mono {
+  font-family: 'Inter', monospace !important;
+}
+
+/* Update the cursor styles to only apply on non-mobile devices */
+@media (min-width: 768px) {
+  a, button, [role="button"], input, select, textarea {
+    cursor: none !important;
+  }
+
+  * {
+    cursor: none !important;
+  }
 }
