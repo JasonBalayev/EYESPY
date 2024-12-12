@@ -5,8 +5,8 @@ export const courseworkData = {
     "CS 3000 Algorithms & Data",
     "CS 2810 Mathematics of Data Models",
     "CS 2500 Fundamentals of Computer Science 2",
-    "MATH 2331 Linear Algebra",
     "CS 2510 Fundamentals of Computer Science 1",
+    "MATH 2331 Linear Algebra",
     "CS 1800 Discrete Structures"
     
   ],
