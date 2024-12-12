@@ -118,7 +118,7 @@ const IndexPage = () => {
             {/* Arrow and Buttons */}
             <motion.div className="mt-8 animate-bounce" variants={childVariants}>
               <FaArrowDown className="text-indigo-500 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8" />
-            </motion.div>
+            </motion.div> 
 
             <motion.div className="mt-4 flex gap-4" variants={childVariants}>
               <Link to="/projects">
