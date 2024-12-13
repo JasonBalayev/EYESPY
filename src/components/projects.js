@@ -20,6 +20,7 @@ export var projects = [
       "(ONGOING) A collaborative project for the Northeastern Oasis Project Series team. This project focuses on software development for standard resumes converted into a LaTeX document.",
     badges: ["React.js", "OpenAI API", "TypeScript", "Git/Github"],
     link: "https://github.com/Oasis-NEU/f24-group17",
+    liveLink: "https://latextoresume.netlify.app/",
   },
   {
     name: "Jason's AI Space 🤖",
@@ -75,7 +76,7 @@ export var projects = [
     link: "https://github.com/JasonBalayev/Android-Application",
   },
   {
-    name: "Minimax Algorithm - Tic-Tac-Toe ️❌",
+    name: "Minimax Algorithm - Tic-Tac-Toe ️️❌⭕",
     description:
       "A simple Tic-Tac-Toe game built using Python, HTML, CSS, and JavaScript. This project showcases basic game logic implementation and interactive UI design for two players. Using JavaScript to incorporate the minimax algorithm to win at all times in a standard 3x3 match, and use the best possible moves in a 4x4 and 5x5.",
     badges: ["Python", "HTML", "CSS", "JavaScript", "Django", "Git/Github"],
