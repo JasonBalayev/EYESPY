@@ -34,7 +34,7 @@ const AnimatedStars = () => {
 
     // Animation function
     const animate = () => {
-      // Create slight trail effect
+      // Trails
       ctx.fillStyle = 'rgba(10, 10, 10, 0.1)';
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
@@ -49,13 +49,13 @@ const AnimatedStars = () => {
         if (star.opacity < 0) star.opacity = 0;
         if (star.opacity > 1) star.opacity = 1;
 
-        // Reset position if star goes off screen
+        // Reset if star goes off screen
         if (star.x < 0) star.x = canvas.width;
         if (star.x > canvas.width) star.x = 0;
         if (star.y < 0) star.y = canvas.height;
         if (star.y > canvas.height) star.y = 0;
 
-        // Draw star with gradient
+        // Gradient
         const gradient = ctx.createRadialGradient(
           star.x, star.y, 0,
           star.x, star.y, star.size * 2

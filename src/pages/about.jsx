@@ -305,7 +305,7 @@ const About = () => {
                 >
                   When I'm not coding, you'll find me skateboarding at the best skatepark I can find. 
                   I've been skating for a few years with a few tricks mastered, but I mainly skate bowls. 
-                  When I grow up, I will have collected a deck (wooden board of the skateboard) 
+                  In the near future, I will have collected a deck (wooden board of the skateboard) 
                   from every state with some boards currently found from California, Connecticut, and Massachusets. 
                   <motion.span
                     className="inline-block ml-2"
