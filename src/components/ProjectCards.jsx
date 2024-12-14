@@ -3,21 +3,17 @@ import { motion } from "framer-motion";
 
 const ProjectCard = ({ project }) => {
   const [isHovered, setIsHovered] = React.useState(false);
-  const [isVisible, setIsVisible] = React.useState(true);
+  const [isMobile, setIsMobile] = React.useState(false);
   
-  // Check if screen width is too small to show the indicator
+  // Check if we're on mobile
   React.useEffect(() => {
-    const checkSize = () => {
-      const cardElement = document.querySelector('.project-card');
-      if (cardElement) {
-        const cardWidth = cardElement.getBoundingClientRect().width;
-        setIsVisible(cardWidth > 250);
-      }
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
     };
-
-    checkSize();
-    window.addEventListener('resize', checkSize);
-    return () => window.removeEventListener('resize', checkSize);
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
   return (
@@ -26,15 +22,15 @@ const ProjectCard = ({ project }) => {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
       className="project-card relative p-6 bg-black bg-opacity-40 rounded-xl border border-white border-opacity-10 hover:border-purple-500 transition-all duration-300 h-full flex flex-col overflow-hidden"
-      whileHover={{ y: -5, scale: 1.02 }}
-      onHoverStart={() => setIsHovered(true)}
-      onHoverEnd={() => setIsHovered(false)}
+      whileHover={!isMobile ? { y: -5, scale: 1.02 } : {}}
+      onHoverStart={() => !isMobile && setIsHovered(true)}
+      onHoverEnd={() => !isMobile && setIsHovered(false)}
     >
       {/* GitHub Indicator */}
-      {project.link && isVisible && (
+      {project.link && (
         <motion.div
           initial={{ opacity: 0 }}
-          animate={{ opacity: isHovered ? 1 : 0 }}
+          animate={{ opacity: isMobile ? 1 : (isHovered ? 1 : 0) }}
           transition={{ duration: 0.2 }}
           className="absolute top-0 right-8 m-2 sm:m-3"
         >
@@ -57,8 +53,8 @@ const ProjectCard = ({ project }) => {
             <motion.div
               initial={{ width: 0, opacity: 0 }}
               animate={{ 
-                width: isVisible && isHovered ? 'auto' : 0,
-                opacity: isVisible && isHovered ? 1 : 0
+                width: isMobile ? 'auto' : (isHovered ? 'auto' : 0),
+                opacity: isMobile ? 1 : (isHovered ? 1 : 0)
               }}
               transition={{ duration: 0.2 }}
               className="overflow-hidden whitespace-nowrap"
