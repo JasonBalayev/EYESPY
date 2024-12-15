@@ -10,10 +10,16 @@ export var projects = [
   {
     name: "Custom C Shell ⚙️ (Private – Request Access Required)",
     description:
-      "Created a shell in C with built in custom commands, utilizing efficient system-level design with the C language. Additionally, I used to create and automate test cases for the shell, ensuring optimal performance and reliability. The repository is private, and access can be granted upon request for recruiters or collaborators.",
+      "Implemented a fully functional Unix shell in C that uses core functionalities including process management, I/O redirection, and custom built-in commands. Features include pipeline execution, background process handling, signal management, and environment variable manipulation. Constructed comprehensive 20+ test cases using Python to ensure robustness and reliability. Repository access available upon request for recruiters.",
     badges: ["C", "Python", "Makefile", "Shell", "Git/Github"],
   },
-
+  {
+    name: "Northeastern Electric Racing 🏎️",
+    description:
+      "(ONGOING) A collaborative project contributing to the Northeastern Electric Racing team. This project focuses on software development for electric race car systems, including telemetry, data logging, and optimization algorithms.",
+    badges: ["Express.js", "React.js", "TypeScript", "Prisma", "Docker", "Git/Github"],
+    link: "https://github.com/JasonBalayev/Northeastern-Electric-Racing",
+  },
   {
     name: "Resume LaTeX Generator 📝",
     description:
@@ -25,22 +31,23 @@ export var projects = [
   {
     name: "Jason's AI Space 🤖",
     description:
-      "Jason's AI Space is a virtual assistant modeled as an AI version of me, designed to answer any question using an advanced LLM. This project is used as a free space where users can engage with Jason's digital twin to gain insights, learn, and explore a variety of topics.",
+      "An advanced conversational AI platform powered by large language models, designed to provide comprehensive responses across diverse topics. Implemented with real-time processing capabilities and dynamic response generation, enabling natural interactions while maintaining context awareness and providing detailed, accurate information.",
     badges: ["Next.js", "Convex", "JavaScript", "OpenAI API", "Git/Github"],
     link: "https://github.com/JasonBalayev/JasonsAI",
-    liveLink: "https://jasonsai-space.vercel.app/",
+    liveLink: "https://jasonsai.vercel.app/",
   },
   {
-    name: "Northeastern Electric Racing 🏎️",
+    name: "AI-Powered Voice Assistant 🤖",
     description:
-      "(ONGOING) A collaborative project contributing to the Northeastern Electric Racing team. This project focuses on software development for electric race car systems, including telemetry, data logging, and optimization algorithms.",
-    badges: ["Express.js", "React.js", "TypeScript", "Prisma", "Docker", "Git/Github"],
-    link: "https://github.com/JasonBalayev/Northeastern-Electric-Racing",
+      "A voice-controlled AI assistant that converts speech to text using OpenAI's Whisper API and generates intelligent responses through GPT. Users can interact naturally through voice commands, receiving both audio and text responses. Features include voice recognition, natural language processing, and real-time audio feedback.",
+    badges: ["Next.js", "JavaScript", "OpenAI API", "Whisper API"],
+    link: "https://github.com/JasonBalayev/AI-Voice-Assistant",
+    liveLink: "https://ai-voice-assistant-six.vercel.app/",
   },
   {
     name: "AI-Convex 🤖",
     description:
-      "AI-Convex is an AI-powered To-Do list application. This project integrates AI to enhance task management efficiency, offering personalized suggestions and smart features.",
+      "Developed an intelligent task management system leveraging AI capabilities to streamline productivity workflows. Implemented real-time synchronization using Convex DB, secure authentication with Clerk, and AI-powered task analysis for automated prioritization and smart suggestions.",
     badges: ["Next.js", "Convex", "TypeScript", "Clerk Auth", "OpenAI API", "Git/Github"],
     link: "https://github.com/JasonBalayev/AI-Convex",
     liveLink: "https://ai-convex-mu.vercel.app/",
@@ -63,20 +70,20 @@ export var projects = [
   {
     name: "AI SaaS FlashSet 🤖",
     description:
-      "AI SaaS Flashcard is an AI-powered software as a service (SaaS) application designed for effortless flashcard creation and management given any prompt by the user. Basic and pro features are currently in test mode. Although the app is a work in progress, it aims to provide an educational experience for learners.",
+      "Created a subscription-based SaaS platform that leverages AI to generate comprehensive flashcard sets from user prompts. Integrated Stripe payment processing for premium features, implemented secure authentication, and developed an intuitive interface for educational content generation. Currently in beta testing phase.",
     badges: ["Next.js", "Firebase", "JavaScript", "Clerk Auth", "Stripe/OpenAI API", "Git/Github"],
     link: "https://github.com/JasonBalayev/AI-Stripe-SaaS-",
     liveLink: "https://ai-flashset.vercel.app/",
   },
   {
-    name: "Android Application 📱",
+    name: "StudySet - Smart Study App 📱",
     description:
-      "This Android Application was developed using Android Studio. The project implements core mobile app features including authentication, data persistence using SQLite, and an intuitive user interface.",
-    badges: ["Java", "Kotlin", "Android Studio", "Git/Github"],
+      "Developed an intelligent Android flashcard application using Kotlin and Jetpack Compose. Implemented spaced repetition algorithms for optimized learning, local data persistence with SQLite, and an adaptive learning system that adjusts card frequency based on user performance.",
+    badges: ["Kotlin", "Jetpack Compose", "SQLite", "Android Studio", "Git/Github"],
     link: "https://github.com/JasonBalayev/Android-Application",
   },
   {
-    name: "Minimax Algorithm - Tic-Tac-Toe ️️❌⭕",
+    name: "Minimax Algoirthm Implementation - Advanced Tic-Tac-Toe Engine 🎮",
     description:
       "A simple Tic-Tac-Toe game built using Python, HTML, CSS, and JavaScript. This project showcases basic game logic implementation and interactive UI design for two players. Using JavaScript to incorporate the minimax algorithm to win at all times in a standard 3x3 match, and use the best possible moves in a 4x4 and 5x5.",
     badges: ["Python", "HTML", "CSS", "JavaScript", "Django", "Git/Github"],
