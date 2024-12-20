@@ -4,7 +4,7 @@ import { Button } from "@nextui-org/button";
 import TypewriterText from "../components/TypewriterText";
 import { Link } from "gatsby";
 import { motion } from "framer-motion";
-import profileImage from "../images/professional/JasonAI.jpg";
+import profileImage from "../images/professional/JasonAI2.png";
 import { FaArrowDown, FaGithub, FaLinkedin, FaCode, FaLaptopCode, FaServer, FaTerminal } from "react-icons/fa";
 import AnimatedStars from "../components/AnimatedStars";
 
@@ -78,21 +78,21 @@ const IndexPage = () => {
 
             {/* Feature Boxes */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 mt-12 w-full max-w-5xl">
-              <FeatureBox
+            <FeatureBox
                 icon={<FaCode />}
-                title="Software Development"
-                description="Building robust applications"
+                title="Software Development & Quality Assurance"
+                description="Building robust applications with quality standards."
               />
               <FeatureBox
                 icon={<FaLaptopCode />}
                 title="Full Stack"
-                description="End-to-end solutions"
+                description="End-to-end solutions for both Web2 and Web3 technologies."
               />
               <FeatureBox
                 icon={<FaServer />}
                 title="System Design"
-                description="Scalable architectures"
-              />
+                description="Creating scalable architectures optimizing performance."
+              />            
             </div>
 
             {/* Rest of the content */}
