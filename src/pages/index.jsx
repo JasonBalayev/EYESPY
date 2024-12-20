@@ -17,8 +17,18 @@ const containerVariants = {
 };
 
 const childVariants = {
-  hidden: { opacity: 0, y: 30 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+  hidden: { 
+    opacity: 0,
+    y: 20  // Reduced from 30 to make it more subtle
+  },
+  visible: { 
+    opacity: 1,
+    y: 0,
+    transition: { 
+      duration: 0.8,
+      ease: "easeOut"
+    }
+  }
 };
 
 const IndexPage = () => {
@@ -28,28 +38,40 @@ const IndexPage = () => {
         <AnimatedStars />
        
         <motion.main
-          className="flex flex-col items-center justify-center min-h-screen w-full relative z-10 px-4 max-w-7xl mx-auto"
+          className="flex flex-col items-center justify-center min-h-screen w-full relative z-10 px-4 max-w-7xl mx-auto pt-12 sm:pt-16"
           variants={containerVariants}
           initial="hidden"
           animate="visible"
         >
-          <motion.section className="flex flex-col items-center w-full">
-            <motion.img
-              src={profileImage}
-              alt="Jason Balayev"
-              className="h-32 w-32 sm:h-40 sm:w-40 md:h-48 md:w-48 rounded-full shadow-xl border-4 border-indigo-500 mb-6"
-              variants={childVariants}
-            />
+          <motion.section className="flex flex-col items-center w-full mt-2 sm:mt-4">
+            <motion.div
+              className="relative mb-6 w-28 h-28 sm:w-36 sm:h-36 md:w-44 md:h-44"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+            >
+              {/* Rainbow rotating ring */}
+              <div className="absolute -inset-1 rounded-full bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 animate-spin-slow" />
+              
+              {/* Subtle glow effect */}
+              <div className="absolute inset-0 rounded-full bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 opacity-30 blur-md animate-pulse-slow" />
+              
+              <img
+                src={profileImage}
+                alt="Jason Balayev"
+                className="relative w-full h-full rounded-full shadow-xl p-[3px]"
+              />
+            </motion.div>
 
             <div className="relative w-full text-center">
-              <h1 className="relative text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold">
+              <h1 className="relative text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold font-spaceGrotesk tracking-tight">
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-purple-500 to-pink-500 [text-shadow:_0_0_30px_rgb(99_102_241_/_0.3)] animate-pulse">
                   <TypewriterText text="Jason Balayev" delay={0} speed={100} />
                 </span>
               </h1>
             </div>
 
-            <h2 className="text-xl sm:text-2xl md:text-3xl mt-2 text-center text-gray-300 flex items-center justify-center gap-3">
+            <h2 className="text-xl sm:text-2xl md:text-3xl mt-2 text-center text-gray-300 flex items-center justify-center gap-3 font-spaceGrotesk">
               <motion.div
                 animate={{ opacity: [0, 1] }}
                 transition={{ duration: 0.5, delay: 1.5 }}

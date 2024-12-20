@@ -16,7 +16,7 @@ const Contact = () => {
             transition={{ duration: 1 }}
             className="text-center"
           >
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-center mb-8">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-center mb-8 font-spaceGrotesk tracking-tight">
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-purple-500 to-pink-500 [text-shadow:_0_0_30px_rgb(99_102_241_/_0.3)] animate-pulse">
                 <TypewriterText 
                   text="Let's Connect"
@@ -77,7 +77,7 @@ const Contact = () => {
             transition={{ duration: 1, delay: 1 }}
             className="mt-12 text-center bg-black/20 p-6 rounded-xl border border-purple-500/20 backdrop-blur-sm"
           >
-            <p className="text-lg sm:text-xl mb-4">
+            <p className="text-lg sm:text-xl mb-4 font-spaceGrotesk">
               <span className="font-bold text-indigo-400">School Email:</span>{" "}
               <span className="text-gray-300">
                 balayev.j{' '}

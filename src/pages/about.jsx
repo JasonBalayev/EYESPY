@@ -25,7 +25,7 @@ const SkillSection = ({ title, skills }) => (
     animate={{ opacity: 1 }}
     transition={{ duration: 0.6 }}
   >
-    <h2 className="text-2xl font-bold text-center mb-8">
+    <h2 className="text-2xl font-bold text-center mb-8 font-spaceGrotesk">
       <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-500">
         {title}
       </span>
@@ -145,7 +145,7 @@ const CourseworkSection = () => (
     animate={{ opacity: 1 }}
     transition={{ duration: 0.6 }}
   >
-    <h2 className="text-3xl font-bold text-center mb-12">
+    <h2 className="text-3xl font-bold text-center mb-12 font-spaceGrotesk">
       <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-500">
         Academic Background
       </span>
@@ -182,7 +182,7 @@ const About = () => {
         <div className="relative z-10 text-white pb-20">
           {/* Header Section */}
           <motion.h1 
-            className="text-4xl sm:text-5xl md:text-6xl font-bold text-center mt-8 mb-12"
+            className="text-4xl sm:text-5xl md:text-6xl font-bold text-center mt-8 mb-12 font-spaceGrotesk tracking-tight"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}

@@ -20,7 +20,7 @@ const NotFoundPage = () => {
           >
             {/* 404 Title */}
             <motion.h1 
-              className="text-6xl sm:text-7xl md:text-8xl font-bold mb-8"
+              className="text-6xl sm:text-7xl md:text-8xl font-bold mb-8 font-spaceGrotesk tracking-tight"
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
@@ -41,7 +41,7 @@ const NotFoundPage = () => {
               transition={{ duration: 0.2 }}
             >
               <motion.h2 
-                className="text-2xl font-bold text-gray-200 mb-4"
+                className="text-2xl font-bold text-gray-200 mb-4 font-spaceGrotesk"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.3 }}

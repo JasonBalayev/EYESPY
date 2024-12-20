@@ -9,7 +9,15 @@ module.exports = {
     "./node_modules/@nextui-org/theme/dist/components/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      animation: {
+        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+        'spin-slow': 'spin 12s linear infinite',
+      },
+      fontFamily: {
+        'spaceGrotesk': ['Space Grotesk', 'sans-serif'],
+      },
+    },
   },
   plugins: [nextui()],
 };

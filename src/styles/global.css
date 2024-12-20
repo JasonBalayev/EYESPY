@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -9,7 +10,7 @@ body {
   width: 100%;
   background: #0f0f0f;
   color: #ffffff;
-  font-family: 'Inter', monospace;
+  font-family: 'Space Grotesk', sans-serif;
   scroll-behavior: smooth;
 }
 
@@ -53,7 +54,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Inter', monospace;
+  font-family: 'Space Grotesk', sans-serif;
   letter-spacing: -0.025em;
 }
 
@@ -72,31 +73,29 @@ p {
   top: 0;
   left: 0;
   width: 100%;
-  height: 60px; /* Example height */
+  height: 60px; 
   z-index: 1000;
   
 }
 
 .project-container {
-  margin-top: 60px; /* Same height as navbar */
+  margin-top: 60px; 
 }
 
-/* Add these styles */
+
 a, button, [role="button"], input, select, textarea {
   cursor: none !important;
 }
 
-/* Optional: Add this if you want to ensure the cursor is hidden everywhere */
 * {
   cursor: none !important;
 }
 
-/* Add specific font classes if needed */
 .font-mono {
-  font-family: 'Inter', monospace !important;
+  font-family: 'Space Grotesk', sans-serif !important;
 }
 
-/* Update the cursor styles to only apply on non-mobile devices */
+
 @media (min-width: 768px) {
   a, button, [role="button"], input, select, textarea {
     cursor: none !important;
