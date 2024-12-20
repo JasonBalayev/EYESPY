@@ -4,7 +4,7 @@ import { Button } from "@nextui-org/button";
 import TypewriterText from "../components/TypewriterText";
 import { Link } from "gatsby";
 import { motion } from "framer-motion";
-import profileImage from "../images/professional/Jason.jpg";
+import profileImage from "../images/professional/JasonAI.jpg";
 import { FaArrowDown, FaGithub, FaLinkedin, FaCode, FaLaptopCode, FaServer, FaTerminal } from "react-icons/fa";
 import AnimatedStars from "../components/AnimatedStars";
 
