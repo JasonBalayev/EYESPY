@@ -14,13 +14,6 @@ export var projects = [
     badges: ["C", "Python", "Makefile", "Shell", "Git/Github"],
   },
   {
-    name: "Northeastern Electric Racing 🏎️",
-    description:
-      "(ONGOING) A collaborative project contributing to the Northeastern Electric Racing team. This project focuses on software development for electric race car systems, including telemetry, data logging, and optimization algorithms.",
-    badges: ["Express.js", "React.js", "TypeScript", "Prisma", "Docker", "Git/Github"],
-    link: "https://github.com/JasonBalayev/Northeastern-Electric-Racing",
-  },
-  {
     name: "Resume LaTeX Generator 📝",
     description:
       "(ONGOING) A collaborative project for the Northeastern Oasis Project Series team. This project focuses on software development for standard resumes converted into a LaTeX document.",
@@ -53,11 +46,19 @@ export var projects = [
     liveLink: "https://ai-convex-mu.vercel.app/",
   },
   {
-    name: "LeetCode Solutions 📂",
+    name: "AI SaaS FlashSet 🤖",
     description:
-      "This repository stores all of my solutions and progress on different LeetCode problems.",
-    badges: ["LeetCode", "Java", "Python", "Git/Github"],
-    link: "https://github.com/JasonBalayev/LeetCodeSolutions",
+      "Created a subscription-based SaaS platform that leverages AI to generate comprehensive flashcard sets from user prompts. Integrated Stripe payment processing for premium features, implemented secure authentication, and developed an intuitive interface for educational content generation. Currently in beta testing phase.",
+    badges: ["Next.js", "Firebase", "JavaScript", "Clerk Auth", "Stripe/OpenAI API", "Git/Github"],
+    link: "https://github.com/JasonBalayev/AI-Stripe-SaaS-",
+    liveLink: "https://ai-flashset.vercel.app/",
+  },
+  {
+    name: "Northeastern Electric Racing 🏎️",
+    description:
+      "(ONGOING) A collaborative project contributing to the Northeastern Electric Racing team. Working on FinishLine, NER's project management platform, developing features to streamline team coordination and track project milestones. Contributing to the full-stack development using modern web technologies and implementing CI/CD pipelines.",
+    badges: ["Express.js", "React.js", "TypeScript", "Prisma", "Docker", "Git/Github"],
+    link: "https://github.com/Northeastern-Electric-Racing/FinishLine",
   },
   {
     name: "Monkeypox Visualizer 🦠",
@@ -68,12 +69,11 @@ export var projects = [
   },
 
   {
-    name: "AI SaaS FlashSet 🤖",
+    name: "LeetCode Solutions 📂",
     description:
-      "Created a subscription-based SaaS platform that leverages AI to generate comprehensive flashcard sets from user prompts. Integrated Stripe payment processing for premium features, implemented secure authentication, and developed an intuitive interface for educational content generation. Currently in beta testing phase.",
-    badges: ["Next.js", "Firebase", "JavaScript", "Clerk Auth", "Stripe/OpenAI API", "Git/Github"],
-    link: "https://github.com/JasonBalayev/AI-Stripe-SaaS-",
-    liveLink: "https://ai-flashset.vercel.app/",
+      "This repository stores all of my solutions and progress on different LeetCode problems.",
+    badges: ["LeetCode", "Java", "Python", "Git/Github"],
+    link: "https://github.com/JasonBalayev/LeetCodeSolutions",
   },
   {
     name: "StudySet - Smart Study App 📱",
