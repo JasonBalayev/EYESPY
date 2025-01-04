@@ -22,6 +22,14 @@ export var projects = [
     liveLink: "https://latextoresume.netlify.app/",
   },
   {
+    name: "HOURBLADE [Roblox Game] 🎮",
+    description:
+      "(ONGOING) A collaborative project for a current Roblox game called HOURBLADE.",
+    badges: ["Roblox Studio", "Lua"],
+    link: "https://github.com/JasonBalayev/HOURBLADE",
+    liveLink: "https://www.roblox.com/games/85911798288213/ALPHA-HOURBLADE",
+  },
+  {
     name: "Jason's AI Space 🤖",
     description:
       "An advanced conversational AI platform powered by large language models, designed to provide comprehensive responses across diverse topics. Implemented with real-time processing capabilities and dynamic response generation, enabling natural interactions while maintaining context awareness and providing detailed, accurate information.",
@@ -67,7 +75,6 @@ export var projects = [
     badges: ["Python", "Django", "OpenAI API", "Postman", "Git/Github"],
     link: "https://github.com/JasonBalayev/MPOX",
   },
-
   {
     name: "LeetCode Solutions 📂",
     description:
