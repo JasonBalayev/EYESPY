@@ -44,7 +44,7 @@ const SkillSection = ({ title, skills }) => (
   </motion.section>
 );
 
-const SkillCard = ({ name, image, delay }) => {
+const SkillCard = ({ name, image }) => {
   // Function to determine image size class based on name
   const getImageSizeClass = (name) => {
     switch (name) {

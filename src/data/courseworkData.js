@@ -1,6 +1,6 @@
 export const courseworkData = {
   courses: [
-    "CS 5610 - Master's Web Development (ONGOING)",
+    "CS 5610 Master's Web Development (ONGOING)",
     "CS 3650 Computer Systems",
     "CS 3500 Object-Oriented Design",
     "CS 3000 Algorithms & Data",
