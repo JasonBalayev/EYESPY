@@ -24,7 +24,7 @@ export var projects = [
   {
     name: "HOURBLADE [Roblox Game] 🎮",
     description:
-      "(ONGOING) A collaborative project for a current Roblox game called HOURBLADE.",
+      "(ONGOING) A collaborative project for a current Roblox game called HOURBLADE through the development of Frontrunner Interactive.",
     badges: ["Roblox Studio", "Lua"],
     link: "https://github.com/JasonBalayev/HOURBLADE",
     liveLink: "https://www.roblox.com/games/85911798288213/ALPHA-HOURBLADE",
