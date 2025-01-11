@@ -14,6 +14,7 @@ export const courseworkData = {
     
   ],
   activities: [
+    "Full-Stack Software Engineer For AI Club",
     "Oasis Project Series Member",
     "Full-Stack Software Engineer For Electric Car Racing",
     "Blockchains Researcher",
