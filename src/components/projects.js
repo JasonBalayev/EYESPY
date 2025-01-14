@@ -8,10 +8,12 @@ export var projects = [
     liveLink: "https://jasonbalayev.dev",
   },
   {
-    name: "Custom C Shell ⚙️ (Private – Request Access Required)",
+    name: "Northeastern AI 🔧",
     description:
-      "Implemented a fully functional Unix shell in C that uses core functionalities including process management, I/O redirection, and custom built-in commands. Features include pipeline execution, background process handling, signal management, and environment variable manipulation. Constructed comprehensive 20+ test cases using Python to ensure robustness and reliability. Repository access available upon request for recruiters.",
-    badges: ["C", "Python", "Makefile", "Shell", "Git/Github"],
+      "Current Tech Lead for the AINEU website, managing the platform and incorporating key updates such as events like the InnovAIte Hackathon. This supports building partnerships, with current sponsors including Microsoft and Northeastern-based organizations. We are always open to new partners and sponsors to collaborate and support our initiatives.",
+    badges: ["TypeScript", "JavaScript", "Firebase", "Git/Github", "Next.js"],
+    link: "https://github.com/AINortheastern/AINUSite",
+    liveLink: "https://aineu.org/",
   },
   {
     name: "Resume LaTeX Generator 📝",
@@ -28,6 +30,12 @@ export var projects = [
     badges: ["Roblox Studio", "Lua"],
     link: "https://github.com/JasonBalayev/HOURBLADE",
     liveLink: "https://www.roblox.com/games/85911798288213/ALPHA-HOURBLADE",
+  },
+  {
+    name: "Custom C Shell ⚙️ (Private – Request Access Required)",
+    description:
+      "Implemented a fully functional Unix shell in C that uses core functionalities including process management, I/O redirection, and custom built-in commands. Features include pipeline execution, background process handling, signal management, and environment variable manipulation. Constructed comprehensive 20+ test cases using Python to ensure robustness and reliability. Repository access available upon request for recruiters.",
+    badges: ["C", "Python", "Makefile", "Shell", "Git/Github"],
   },
   {
     name: "Jason's AI Space 🤖",
