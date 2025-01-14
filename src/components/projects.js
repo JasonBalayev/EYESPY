@@ -18,7 +18,7 @@ export var projects = [
   {
     name: "Resume LaTeX Generator 📝",
     description:
-      "(ONGOING) A collaborative project for the Northeastern Oasis Project Series team. This project focuses on software development for standard resumes converted into a LaTeX document.",
+      "A collaborative project for the Northeastern Oasis Project Series team. This project focuses on software development for standard resumes converted into a LaTeX document.",
     badges: ["React.js", "OpenAI API", "TypeScript", "Shell", "TeX", "Perl"],
     link: "https://github.com/Oasis-NEU/f24-group17",
     liveLink: "https://latextoresume.netlify.app/",
