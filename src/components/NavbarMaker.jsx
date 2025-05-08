@@ -7,18 +7,19 @@ import { FaBitcoin } from "react-icons/fa";
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
   const [hoveredTab, setHoveredTab] = React.useState(null);
+  const navRef = React.useRef(null);
 
   // Close menu when clicking outside
   React.useEffect(() => {
     const handleClickOutside = (event) => {
-      if (isMenuOpen && !event.target.closest('nav')) {
+      if (isMenuOpen && navRef.current && !navRef.current.contains(event.target)) {
         setIsMenuOpen(false);
       }
     };
 
-    document.addEventListener('click', handleClickOutside);
+    document.addEventListener('mousedown', handleClickOutside);
     return () => {
-      document.removeEventListener('click', handleClickOutside);
+      document.removeEventListener('mousedown', handleClickOutside);
     };
   }, [isMenuOpen]);
 
@@ -38,7 +39,7 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="bg-black/30 backdrop-blur-md border-b border-red-500/20 flex items-center justify-between px-4 py-3 z-50 relative">
+    <nav ref={navRef} className="bg-black/30 backdrop-blur-md border-b border-red-500/20 flex items-center justify-between px-4 py-3 z-50 relative">
       <Link to="/" className="flex items-center space-x-2">
         <motion.div
           initial={{ rotate: 0 }}
@@ -60,10 +61,16 @@ const Navbar = () => {
       </Link>
  
       <div className="sm:hidden z-50">
-        <div className="relative">
+        <div 
+          className="relative"
+          onClick={(e) => {
+            e.stopPropagation();
+            setIsMenuOpen(!isMenuOpen);
+          }}
+        >
           <Hamburger 
             toggled={isMenuOpen} 
-            toggle={() => setIsMenuOpen(!isMenuOpen)} 
+            toggle={setIsMenuOpen} 
             color="white" 
             size={24} 
             duration={0.3}
