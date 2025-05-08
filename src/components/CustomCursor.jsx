@@ -5,7 +5,8 @@ const CustomCursor = () => {
   const cursorX = useMotionValue(0);
   const cursorY = useMotionValue(0);
   const [isClicking, setIsClicking] = useState(false);
-  const [isMobile, setIsMobile] = useState(true); // Default to true to prevent flash on mobile
+  const [isMobile, setIsMobile] = useState(true);  
+  const [isHovering, setIsHovering] = useState(false);
 
   useEffect(() => {
     // Check if device is mobile
@@ -15,8 +16,6 @@ const CustomCursor = () => {
         window.innerWidth < 768
       );
     };
-
-    // Initial check
     checkMobile();
 
     // Add resize listener
@@ -31,19 +30,45 @@ const CustomCursor = () => {
 
       const handleMouseDown = () => setIsClicking(true);
       const handleMouseUp = () => setIsClicking(false);
+      
+      const handleMouseOver = (e) => {
+        if (
+          e.target.tagName === 'BUTTON' || 
+          e.target.tagName === 'A' || 
+          e.target.closest('a') || 
+          e.target.closest('button') ||
+          e.target.classList.contains('hover-effect')
+        ) {
+          setIsHovering(true);
+        }
+      };
+      
+      const handleMouseOut = (e) => {
+        if (
+          e.target.tagName === 'BUTTON' || 
+          e.target.tagName === 'A' || 
+          e.target.closest('a') || 
+          e.target.closest('button') ||
+          e.target.classList.contains('hover-effect')
+        ) {
+          setIsHovering(false);
+        }
+      };
 
       // Hide the default cursor
       document.body.style.cursor = "none";
-      
-      // Add event listeners
       window.addEventListener("mousemove", updateMousePosition, { passive: true });
       window.addEventListener("mousedown", handleMouseDown);
       window.addEventListener("mouseup", handleMouseUp);
+      document.addEventListener("mouseover", handleMouseOver);
+      document.addEventListener("mouseout", handleMouseOut);
 
       return () => {
         window.removeEventListener("mousemove", updateMousePosition);
         window.removeEventListener("mousedown", handleMouseDown);
         window.removeEventListener("mouseup", handleMouseUp);
+        document.removeEventListener("mouseover", handleMouseOver);
+        document.removeEventListener("mouseout", handleMouseOut);
         document.body.style.cursor = "auto";
       };
     } else {
@@ -54,7 +79,7 @@ const CustomCursor = () => {
     return () => {
       window.removeEventListener('resize', checkMobile);
     };
-  }, [isMobile]); // Add isMobile to dependency array
+  }, [isMobile]); 
 
   // Don't render anything on mobile
   if (isMobile) return null;
@@ -62,7 +87,7 @@ const CustomCursor = () => {
   return (
     <div className="pointer-events-none fixed inset-0 z-[9999]">
       <motion.div
-        className="fixed w-6 h-6 rounded-full bg-purple-900/60 backdrop-blur-sm"
+        className="fixed rounded-full bg-red-600/60 backdrop-blur-sm"
         style={{
           x: cursorX,
           y: cursorY,
@@ -70,7 +95,9 @@ const CustomCursor = () => {
           translateY: "-50%",
         }}
         animate={{
-          scale: isClicking ? 0.8 : 1,
+          scale: isClicking ? 0.8 : isHovering ? 1.5 : 1,
+          width: isHovering ? "32px" : "24px",
+          height: isHovering ? "32px" : "24px",
         }}
         transition={{
           type: "spring",
@@ -79,8 +106,9 @@ const CustomCursor = () => {
           mass: 0.5,
         }}
       />
+      
       <motion.div
-        className="fixed w-3 h-3 rounded-full bg-purple-800"
+        className="fixed rounded-full bg-red-500"
         style={{
           x: cursorX,
           y: cursorY,
@@ -88,7 +116,9 @@ const CustomCursor = () => {
           translateY: "-50%",
         }}
         animate={{
-          scale: isClicking ? 1.2 : 1,
+          scale: isClicking ? 1.2 : isHovering ? 0.5 : 1,
+          width: isHovering ? "8px" : "12px",
+          height: isHovering ? "8px" : "12px",
         }}
         transition={{
           type: "spring",
@@ -97,6 +127,23 @@ const CustomCursor = () => {
           mass: 0.5,
         }}
       />
+      
+      {isClicking && (
+        <motion.div
+          className="fixed text-red-400 font-mono pointer-events-none select-none"
+          style={{
+            x: cursorX,
+            y: cursorY,
+            translateX: "-50%",
+            translateY: "-50%",
+          }}
+          initial={{ opacity: 0, scale: 0.5 }}
+          animate={{ opacity: 1, scale: 1 }}
+          exit={{ opacity: 0, scale: 0.5 }}
+        >
+          ₿
+        </motion.div>
+      )}
     </div>
   );
 };

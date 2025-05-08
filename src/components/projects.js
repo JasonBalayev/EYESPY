@@ -7,6 +7,20 @@ export var projects = [
     liveLink: "https://jasonbalayev.dev",
   },
   {
+    name: "Snowball ⚪️",
+    description:
+      "Placed 1st place, won $6,000.",
+    badges: ["React.js", "Gatsby.js", "Three.js", "Tailwind CSS", "Javascript", "Git/Github"],
+    liveLink: "https://snowball-1helzz9im-saladin.vercel.app/platform",
+  },
+  {
+    name: "Near AI Agent Games 🤖",
+    description:
+      "Placed 1st place, won $2,000.",
+    badges: ["React.js", "Gatsby.js", "Three.js", "Tailwind CSS", "Javascript", "Git/Github"],
+    liveLink: "https://github.com/RepoBug-UX/BAF_AI",
+  },
+  {
     name: "Northeastern AI 🔧",
     description:
       "Current Tech Lead for the AINEU website, managing the platform and incorporating key updates such as events like the InnovAIte Hackathon. This supports building partnerships, with current sponsors including Microsoft and Northeastern-based organizations. We are always open to new partners and sponsors to collaborate and support our initiatives.",

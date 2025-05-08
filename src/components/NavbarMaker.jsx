@@ -2,90 +2,189 @@ import * as React from "react";
 import { Link } from "gatsby";
 import { Squash as Hamburger } from "hamburger-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { FaBitcoin } from "react-icons/fa";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
   const [hoveredTab, setHoveredTab] = React.useState(null);
 
+  // Close menu when clicking outside
+  React.useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (isMenuOpen && !event.target.closest('nav')) {
+        setIsMenuOpen(false);
+      }
+    };
+
+    document.addEventListener('click', handleClickOutside);
+    return () => {
+      document.removeEventListener('click', handleClickOutside);
+    };
+  }, [isMenuOpen]);
+
+  // Close menu when route changes
+  React.useEffect(() => {
+    return () => {
+      setIsMenuOpen(false);
+    };
+  }, []);
+
   const pages = [
     ["/", "Home"],
+    ["/achievements", "Achievements"],
     ["/about", "About Me"],
     ["/projects", "Projects"],
     ["/contact", "Contact"],
   ];
 
   return (
-    <nav className="bg-transparent flex items-center justify-between px-4 py-3 z-50 relative">
-      <div className="sm:hidden">
-        <Hamburger toggled={isMenuOpen} toggle={setIsMenuOpen} color="white" size={24} />
+    <nav className="bg-black/30 backdrop-blur-md border-b border-red-500/20 flex items-center justify-between px-4 py-3 z-50 relative">
+      <Link to="/" className="flex items-center space-x-2">
+        <motion.div
+          initial={{ rotate: 0 }}
+          animate={{ rotate: 360 }}
+          transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
+          className="relative"
+        >
+          <FaBitcoin className="text-red-500 text-2xl sm:text-3xl" />
+          <motion.div 
+            className="absolute inset-0 bg-red-500 rounded-full blur-md opacity-40"
+            animate={{ scale: [1, 1.2, 1] }}
+            transition={{ duration: 2, repeat: Infinity }}
+          />
+        </motion.div>
+        <div className="font-spaceGrotesk font-bold text-xl sm:text-2xl tracking-wider">
+          <span className="text-white">JASONBALAYEV</span>
+          <span className="text-red-500">.DEV</span>
+        </div>
+      </Link>
+ 
+      <div className="sm:hidden z-50">
+        <div className="relative">
+          <Hamburger 
+            toggled={isMenuOpen} 
+            toggle={() => setIsMenuOpen(!isMenuOpen)} 
+            color="white" 
+            size={24} 
+            duration={0.3}
+          />
+          <motion.div 
+            className="absolute inset-0 bg-red-500 rounded-full blur-md opacity-20"
+            animate={{ scale: [1, 1.2, 1] }}
+            transition={{ duration: 2, repeat: Infinity }}
+          />
+        </div>
       </div>
-
-      <div className="hidden sm:flex items-center space-x-7">
+ 
+      <div className="hidden sm:flex items-center space-x-1">
         {pages.map((page) => (
           <Link
             key={page[0]}
             to={page[0]}
-            className="relative group"
+            className="relative group px-4 py-2"
             onMouseEnter={() => setHoveredTab(page[0])}
             onMouseLeave={() => setHoveredTab(null)}
           >
-            <span className="relative z-10 text-white text-xl px-4 py-2 transition-colors duration-300">
+            <div className="relative z-10 text-gray-300 group-hover:text-white transition-colors duration-300 font-spaceGrotesk font-medium tracking-wide uppercase text-sm">
               {page[1]}
-            </span>
+ 
+              <div className="absolute bottom-0 left-0 w-full h-[1px] overflow-hidden">
+                <motion.div 
+                  className="h-full bg-gradient-to-r from-transparent via-red-500 to-transparent"
+                  initial={{ x: "-100%" }}
+                  animate={{ x: hoveredTab === page[0] ? "100%" : "-100%" }}
+                  transition={{ duration: 1, ease: "easeInOut" }}
+                />
+              </div>
+            </div>
 
-            {/* Hover Indicator */}
             <AnimatePresence>
               {hoveredTab === page[0] && (
                 <motion.div
-                  className="absolute inset-0 bg-gradient-to-r from-violet-600/20 via-fuchsia-600/20 to-purple-600/20 rounded-lg z-0"
+                  className="absolute inset-0 bg-gradient-to-r from-red-600/10 via-rose-600/10 to-red-600/10 rounded-md z-0 overflow-hidden"
                   layoutId="hoverTab"
                   initial={{ scale: 0.9, opacity: 0 }}
-                  animate={{ 
-                    scale: 1.1, 
-                    opacity: 1,
-                    transition: { type: "spring", stiffness: 400, damping: 25 }
-                  }}
+                  animate={{ scale: 1, opacity: 1 }}
                   exit={{ scale: 0.9, opacity: 0 }}
+                  transition={{ duration: 0.2 }}
                 >
-                  {/* Glowing effect */}
-                  <div className="absolute inset-0 bg-gradient-to-r from-violet-500/20 via-fuchsia-500/20 to-purple-500/20 blur-md" />
+                  <div className="absolute inset-0 opacity-20">
+                    <div className="absolute top-0 left-0 right-0 h-[1px] bg-red-500/40" />
+                    <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-red-500/40" />
+                    <div className="absolute left-0 top-0 bottom-0 w-[1px] bg-red-500/40" />
+                    <div className="absolute right-0 top-0 bottom-0 w-[1px] bg-red-500/40" />
+                    <div className="h-[1px] w-1/2 bg-red-500/40 absolute top-[30%] right-0" />
+                    <div className="h-[1px] w-1/3 bg-red-500/40 absolute top-[70%] left-0" />
+                    <div className="w-[1px] h-1/2 bg-red-500/40 absolute left-[30%] bottom-0" />
+                    <div className="w-[1px] h-1/3 bg-red-500/40 absolute right-[20%] top-0" />
+                  </div>
+
+                  <div className="absolute inset-0 bg-gradient-to-r from-red-500/10 via-rose-500/10 to-red-500/10 blur-md" />
+                  <motion.div 
+                    className="absolute h-1 w-1 rounded-full bg-red-500"
+                    animate={{ 
+                      x: ["0%", "100%"],
+                      y: ["0%", "100%"]
+                    }}
+                    transition={{ 
+                      duration: 1.5, 
+                      repeat: Infinity,
+                      repeatType: "reverse",
+                      ease: "linear"
+                    }}
+                  />
                 </motion.div>
               )}
             </AnimatePresence>
-
-            {/* Bottom Gradient Line */}
-            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 h-[2px] w-0 bg-gradient-to-r from-transparent via-violet-500/50 to-transparent group-hover:w-full transition-all duration-300" />
+  
+            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 h-[2px] w-0 bg-gradient-to-r from-transparent via-red-500 to-transparent group-hover:w-full transition-all duration-300" />
           </Link>
         ))}
       </div>
 
-      {/* Mobile Menu */}
       <AnimatePresence>
         {isMenuOpen && (
-          <motion.div 
-            className="sm:hidden absolute top-16 right-0 w-full bg-black/90 backdrop-blur-sm z-40"
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
+            className="absolute top-full left-0 right-0 bg-black/90 backdrop-blur-lg border-b border-red-500/20 flex flex-col items-center sm:hidden z-40 overflow-hidden"
           >
             {pages.map((page) => (
               <Link
-                key={page[0] + " mobile"}
+                key={page[0]}
                 to={page[0]}
-                className="block relative overflow-hidden group"
+                className="w-full"
                 onClick={() => setIsMenuOpen(false)} 
               >
-                <div className="relative py-3 px-4 text-gray-300 text-lg transition-all duration-300 group-hover:text-white group-hover:pl-6">
-                  {page[1]}
+                <div className="relative py-4 px-6 text-gray-300 text-lg transition-all duration-300 hover:text-white hover:bg-red-900/20 border-b border-red-500/10 overflow-hidden">
+                  <div className="relative z-10 flex items-center font-spaceGrotesk tracking-wide">
+                    <div className="mr-3 text-red-500 opacity-70">
+                      {page[0] === "/" && <span className="text-xs">₿</span>}
+                      {page[0] === "/about" && <span className="text-xs">Ξ</span>}
+                      {page[0] === "/projects" && <span className="text-xs">◎</span>}
+                      {page[0] === "/achievements" && <span className="text-xs">✨</span>}
+                      {page[0] === "/contact" && <span className="text-xs">₮</span>}
+                    </div>
+                    {page[1]}
+                  </div>
+                  
+                  <div className="absolute inset-0 opacity-10">
+                    <div className="absolute top-0 left-0 right-0 h-[1px] bg-red-500/40" />
+                    <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-red-500/40" />
+                    <div className="h-[1px] w-1/2 bg-red-500/40 absolute top-[50%] right-0" />
+                    <div className="w-[1px] h-1/2 bg-red-500/40 absolute left-[30%] top-0" />
+                  </div>
+                  
                   <motion.div
-                    className="absolute inset-0 bg-gradient-to-r from-violet-600/20 via-fuchsia-600/20 to-purple-600/20"
+                    className="absolute inset-0 bg-gradient-to-r from-red-600/10 via-rose-600/10 to-red-600/10"
                     initial={{ x: '-100%' }}
                     whileHover={{ x: 0 }}
                     transition={{ duration: 0.3 }}
                   />
                   <motion.div
-                    className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-violet-500/40 via-fuchsia-500/40 to-purple-500/40"
+                    className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-red-500/40 via-rose-500/40 to-red-500/40"
                     initial={{ scaleY: 0 }}
                     whileHover={{ scaleY: 1 }}
                     transition={{ duration: 0.2 }}

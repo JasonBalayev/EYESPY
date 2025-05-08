@@ -26,7 +26,7 @@ const SkillSection = ({ title, skills }) => (
     transition={{ duration: 0.6 }}
   >
     <h2 className="text-2xl font-bold text-center mb-8 font-spaceGrotesk">
-      <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-500">
+      <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-rose-500">
         {title}
       </span>
     </h2>
@@ -74,7 +74,7 @@ const SkillCard = ({ name, image }) => {
       whileHover={{ scale: 1.05 }}
       transition={{ duration: 0.15 }}
     >
-      <div className="relative p-4 bg-black bg-opacity-40 rounded-xl border border-white border-opacity-10 group-hover:border-indigo-500 transition-all duration-200 h-[120px] sm:h-[130px] flex items-center justify-center">
+      <div className="relative p-4 bg-black bg-opacity-40 rounded-xl border border-white border-opacity-10 group-hover:border-red-500 transition-all duration-200 h-[120px] sm:h-[130px] flex items-center justify-center">
         <div className="flex flex-col items-center justify-between h-full">
           <div className={`flex items-center justify-center ${getImageSizeClass(name)}`}>
             <img 
@@ -83,7 +83,7 @@ const SkillCard = ({ name, image }) => {
               className={getImageClass(name)}
             />
           </div>
-          <p className="text-xs sm:text-sm font-medium text-gray-200 group-hover:text-indigo-400 transition-colors duration-200 text-center mt-2">
+          <p className="text-xs sm:text-sm font-medium text-gray-200 group-hover:text-red-400 transition-colors duration-200 text-center mt-2">
             {name}
           </p>
         </div>
@@ -97,18 +97,18 @@ const CourseworkCard = ({ title, items }) => {
 
   return (
     <motion.div
-      className="p-6 bg-black bg-opacity-40 rounded-xl border border-white border-opacity-10 hover:border-indigo-500 transition-all duration-300 cursor-pointer"
+      className="p-6 bg-black bg-opacity-40 rounded-xl border border-white border-opacity-10 hover:border-red-500 transition-all duration-300 cursor-pointer"
       whileHover={{ scale: 1.02 }}
       onClick={() => setIsExpanded(!isExpanded)}
     >
       <div className="flex justify-between items-center mb-4">
-        <h3 className="text-xl font-semibold text-indigo-400">
+        <h3 className="text-xl font-semibold text-red-400">
           {title}
         </h3>
         <motion.div
           animate={{ rotate: isExpanded ? 180 : 0 }}
           transition={{ duration: 0.3 }}
-          className="text-indigo-400"
+          className="text-red-400"
         >
           ▼
         </motion.div>
@@ -129,7 +129,7 @@ const CourseworkCard = ({ title, items }) => {
             transition={{ delay: index * 0.1 }}
             className="text-gray-300 flex items-center space-x-2"
           >
-            <span className="text-indigo-500">•</span>
+            <span className="text-red-500">•</span>
             <span>{item}</span>
           </motion.li>
         ))}
@@ -146,7 +146,7 @@ const CourseworkSection = () => (
     transition={{ duration: 0.6 }}
   >
     <h2 className="text-3xl font-bold text-center mb-12 font-spaceGrotesk">
-      <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-500">
+      <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-400 via-rose-500 to-red-600 [text-shadow:_0_0_30px_rgb(239_68_68_/_0.3)] animate-pulse">
         Academic Background
       </span>
     </h2>
@@ -160,13 +160,13 @@ const CourseworkSection = () => (
 
 const HighlightedText = ({ children }) => (
   <motion.span
-    className="text-indigo-400 font-semibold relative inline-block"
+    className="text-red-400 font-semibold relative inline-block"
     whileHover={{ scale: 1.05 }}
     transition={{ duration: 0.2 }}
   >
     {children}
     <motion.div
-      className="absolute bottom-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-indigo-500 to-transparent"
+      className="absolute bottom-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-red-500 to-transparent"
       initial={{ scaleX: 0 }}
       animate={{ scaleX: 1 }}
       transition={{ duration: 0.6, delay: 0.2 }}
@@ -180,14 +180,13 @@ const About = () => {
       <AnimatedStars />
       <Layout>
         <div className="relative z-10 text-white pb-20">
-          {/* Header Section */}
           <motion.h1 
             className="text-4xl sm:text-5xl md:text-6xl font-bold text-center mt-8 mb-12 font-spaceGrotesk tracking-tight"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-purple-500 to-pink-500 [text-shadow:_0_0_30px_rgb(99_102_241_/_0.3)] animate-pulse">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-400 via-rose-500 to-pink-500 [text-shadow:_0_0_30px_rgb(239_68_68_/_0.3)] animate-pulse">
               <TypewriterText 
                 text="About Me" 
                 delay={0} 
@@ -196,7 +195,6 @@ const About = () => {
             </span>
           </motion.h1>
 
-          {/* About Text Section */}
           <motion.div
             className="max-w-3xl mx-auto text-lg text-gray-300 mb-16 space-y-6"
             initial={{ opacity: 0, y: 20 }}
@@ -204,7 +202,7 @@ const About = () => {
             transition={{ duration: 0.6, delay: 0.3 }}
           >
             <motion.div
-              className="p-6 bg-black/30 rounded-xl border border-indigo-500/20 backdrop-blur-sm"
+              className="p-6 bg-black/30 rounded-xl border border-red-500/20 backdrop-blur-sm"
               whileHover={{ scale: 1.01 }}
               transition={{ duration: 0.2 }}
             >
@@ -225,7 +223,7 @@ const About = () => {
               </motion.p>
 
               <motion.div 
-                className="mt-6 p-4 bg-gradient-to-r from-indigo-500/5 to-purple-500/5 rounded-lg border-l-2 border-indigo-500"
+                className="mt-6 p-4 bg-gradient-to-r from-red-500/5 to-rose-500/5 rounded-lg border-l-2 border-red-500"
                 initial={{ x: -20, opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
                 transition={{ duration: 0.6, delay: 0.4 }}
@@ -258,11 +256,11 @@ const About = () => {
                           repeat: Infinity,
                           delay: index * 0.2
                         }}
-                        className="text-indigo-400"
+                        className="text-red-400"
                       >
                         ▹
                       </motion.span>
-                      <span className="text-gray-300 hover:text-indigo-400 transition-colors duration-300">
+                      <span className="text-gray-300 hover:text-red-400 transition-colors duration-300">
                         {item}
                       </span>
                     </motion.li>
@@ -271,14 +269,13 @@ const About = () => {
               </motion.div>
             </motion.div>
 
-            {/* Fun Fact Section */}
             <motion.div
-              className="relative mt-8 p-6 bg-gradient-to-r from-indigo-500/10 to-purple-500/10 rounded-xl border border-indigo-500/20"
+              className="relative mt-8 p-6 bg-gradient-to-r from-red-500/10 to-rose-500/10 rounded-xl border border-red-500/20"
               whileHover={{ scale: 1.02 }}
               transition={{ duration: 0.2 }}
             >
               <div className="absolute -top-3 left-4 bg-[#0a0a0a] px-4 py-1">
-                <span className="text-indigo-400 font-semibold">Fun Fact</span>
+                <span className="text-red-400 font-semibold">Fun Fact</span>
               </div>
               
               <div className="flex items-center gap-4">
@@ -292,7 +289,7 @@ const About = () => {
                     repeat: Infinity,
                     ease: "linear"
                   }}
-                  className="text-indigo-400 text-3xl"
+                  className="text-red-400 text-3xl"
                 >
                   <FaSkating />
                 </motion.div>
@@ -322,10 +319,9 @@ const About = () => {
                   </motion.span>
                 </motion.p>
               </div>
-              
-              {/* Decorative elements */}
+
               <motion.div
-                className="absolute -bottom-1 -right-1 text-indigo-500/20 text-6xl"
+                className="absolute -bottom-1 -right-1 text-red-500/20 text-6xl"
                 animate={{
                   rotate: [0, 360],
                   scale: [1, 1.1, 1]
@@ -340,11 +336,7 @@ const About = () => {
               </motion.div>
             </motion.div>
           </motion.div>
-
-          {/* Coursework Section */}
           <CourseworkSection />
-
-          {/* Skills Sections */}
           <SkillSection title="Languages" skills={languagesData} />
           <SkillSection title="Developer Tools" skills={toolsData} />
           <SkillSection title="Frameworks" skills={frameworksData} />
