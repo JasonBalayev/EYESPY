@@ -2,12 +2,28 @@ import * as React from "react";
 import { Link } from "gatsby";
 import { Squash as Hamburger } from "hamburger-react";
 import { motion, AnimatePresence } from "framer-motion";
-import { FaBitcoin } from "react-icons/fa";
+import { FaCode, FaLaptopCode, FaUserAlt, FaBriefcase, FaEnvelope } from "react-icons/fa";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
   const [hoveredTab, setHoveredTab] = React.useState(null);
   const navRef = React.useRef(null);
+  const [scrolled, setScrolled] = React.useState(false);
+
+  // Handle scroll effect
+  React.useEffect(() => {
+    const handleScroll = () => {
+      const isScrolled = window.scrollY > 10;
+      if (isScrolled !== scrolled) {
+        setScrolled(isScrolled);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [scrolled]);
 
   // Close menu when clicking outside
   React.useEffect(() => {
@@ -31,178 +47,144 @@ const Navbar = () => {
   }, []);
 
   const pages = [
-    ["/", "Home"],
-    ["/achievements", "Achievements"],
-    ["/about", "About Me"],
-    ["/projects", "Projects"],
-    ["/contact", "Contact"],
+    { path: "/", label: "Home", icon: <FaCode /> },
+    { path: "/experience", label: "Experience", icon: <FaBriefcase /> },
+    { path: "/about", label: "About Me", icon: <FaUserAlt /> },
+    { path: "/projects", label: "Projects", icon: <FaLaptopCode /> },
+    { path: "/contact", label: "Contact", icon: <FaEnvelope /> },
   ];
 
   return (
-    <nav ref={navRef} className="bg-black/30 backdrop-blur-md border-b border-red-500/20 flex items-center justify-between px-4 py-3 z-50 relative">
-      <Link to="/" className="flex items-center space-x-2">
-        <motion.div
-          initial={{ rotate: 0 }}
-          animate={{ rotate: 360 }}
-          transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
-          className="relative"
-        >
-          <FaBitcoin className="text-red-500 text-2xl sm:text-3xl" />
-          <motion.div 
-            className="absolute inset-0 bg-red-500 rounded-full blur-md opacity-40"
-            animate={{ scale: [1, 1.2, 1] }}
-            transition={{ duration: 2, repeat: Infinity }}
-          />
-        </motion.div>
-        <div className="font-spaceGrotesk font-bold text-xl sm:text-2xl tracking-wider">
-          <span className="text-white">JASONBALAYEV</span>
-          <span className="text-red-500">.DEV</span>
-        </div>
-      </Link>
- 
-      <div className="sm:hidden z-50">
-        <div 
-          className="relative"
-          onClick={(e) => {
-            e.stopPropagation();
-            setIsMenuOpen(!isMenuOpen);
-          }}
-        >
-          <Hamburger 
-            toggled={isMenuOpen} 
-            toggle={setIsMenuOpen} 
-            color="white" 
-            size={24} 
-            duration={0.3}
-          />
-          <motion.div 
-            className="absolute inset-0 bg-red-500 rounded-full blur-md opacity-20"
-            animate={{ scale: [1, 1.2, 1] }}
-            transition={{ duration: 2, repeat: Infinity }}
-          />
-        </div>
-      </div>
- 
-      <div className="hidden sm:flex items-center space-x-1">
-        {pages.map((page) => (
-          <Link
-            key={page[0]}
-            to={page[0]}
-            className="relative group px-4 py-2"
-            onMouseEnter={() => setHoveredTab(page[0])}
-            onMouseLeave={() => setHoveredTab(null)}
-          >
-            <div className="relative z-10 text-gray-300 group-hover:text-white transition-colors duration-300 font-spaceGrotesk font-medium tracking-wide uppercase text-sm">
-              {page[1]}
- 
-              <div className="absolute bottom-0 left-0 w-full h-[1px] overflow-hidden">
+    <motion.nav 
+      ref={navRef} 
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        scrolled ? 'bg-black/70 backdrop-blur-lg shadow-lg' : 'bg-black/30 backdrop-blur-md'
+      }`}
+      initial={{ y: -100 }}
+      animate={{ y: 0 }}
+      transition={{ duration: 0.5 }}
+    >
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-16 sm:h-20">
+          <Link to="/" className="flex items-center space-x-2 group">
+            <div className="relative">
+              <motion.div
+                className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center bg-gradient-to-br from-blue-500 to-blue-700 rounded-lg overflow-hidden"
+                whileHover={{ 
+                  scale: 1.1,
+                  rotate: 5,
+                  transition: { duration: 0.2 }
+                }}
+              >
+                <span className="text-white text-xl sm:text-2xl font-bold">C</span>
                 <motion.div 
-                  className="h-full bg-gradient-to-r from-transparent via-red-500 to-transparent"
-                  initial={{ x: "-100%" }}
-                  animate={{ x: hoveredTab === page[0] ? "100%" : "-100%" }}
-                  transition={{ duration: 1, ease: "easeInOut" }}
+                  className="absolute inset-0 bg-blue-400 mix-blend-overlay opacity-0"
+                  whileHover={{ opacity: 0.5, transition: { duration: 0.2 } }}
                 />
-              </div>
+              </motion.div>
+              <motion.div 
+                className="absolute -inset-1 bg-blue-500/20 rounded-lg blur-md"
+                animate={{ 
+                  scale: [1, 1.2, 1],
+                  opacity: [0.3, 0.5, 0.3]
+                }}
+                transition={{ duration: 2, repeat: Infinity }}
+              />
             </div>
-
-            <AnimatePresence>
-              {hoveredTab === page[0] && (
-                <motion.div
-                  className="absolute inset-0 bg-gradient-to-r from-red-600/10 via-rose-600/10 to-red-600/10 rounded-md z-0 overflow-hidden"
-                  layoutId="hoverTab"
-                  initial={{ scale: 0.9, opacity: 0 }}
-                  animate={{ scale: 1, opacity: 1 }}
-                  exit={{ scale: 0.9, opacity: 0 }}
-                  transition={{ duration: 0.2 }}
-                >
-                  <div className="absolute inset-0 opacity-20">
-                    <div className="absolute top-0 left-0 right-0 h-[1px] bg-red-500/40" />
-                    <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-red-500/40" />
-                    <div className="absolute left-0 top-0 bottom-0 w-[1px] bg-red-500/40" />
-                    <div className="absolute right-0 top-0 bottom-0 w-[1px] bg-red-500/40" />
-                    <div className="h-[1px] w-1/2 bg-red-500/40 absolute top-[30%] right-0" />
-                    <div className="h-[1px] w-1/3 bg-red-500/40 absolute top-[70%] left-0" />
-                    <div className="w-[1px] h-1/2 bg-red-500/40 absolute left-[30%] bottom-0" />
-                    <div className="w-[1px] h-1/3 bg-red-500/40 absolute right-[20%] top-0" />
-                  </div>
-
-                  <div className="absolute inset-0 bg-gradient-to-r from-red-500/10 via-rose-500/10 to-red-500/10 blur-md" />
-                  <motion.div 
-                    className="absolute h-1 w-1 rounded-full bg-red-500"
-                    animate={{ 
-                      x: ["0%", "100%"],
-                      y: ["0%", "100%"]
-                    }}
-                    transition={{ 
-                      duration: 1.5, 
-                      repeat: Infinity,
-                      repeatType: "reverse",
-                      ease: "linear"
-                    }}
-                  />
-                </motion.div>
-              )}
-            </AnimatePresence>
-  
-            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 h-[2px] w-0 bg-gradient-to-r from-transparent via-red-500 to-transparent group-hover:w-full transition-all duration-300" />
+            
+            <div className="font-spaceGrotesk font-bold text-xl sm:text-2xl tracking-wider">
+              <span className="text-white">Caleb</span>
+              <span className="bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">BH</span>
+            </div>
           </Link>
-        ))}
+
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex items-center space-x-1">
+            {pages.map((page) => (
+              <Link
+                key={page.path}
+                to={page.path}
+                className="relative px-3 py-2 mx-1 group"
+                onMouseEnter={() => setHoveredTab(page.path)}
+                onMouseLeave={() => setHoveredTab(null)}
+              >
+                <div className="relative z-10 text-gray-300 group-hover:text-white transition-colors duration-300 font-medium flex items-center space-x-1.5">
+                  <span className="text-blue-400 text-sm">{page.icon}</span>
+                  <span>{page.label}</span>
+                </div>
+
+                <AnimatePresence>
+                  {hoveredTab === page.path && (
+                    <motion.div
+                      className="absolute inset-0 bg-blue-600/10 rounded-md z-0"
+                      layoutId="hoverBackground"
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
+                      transition={{ duration: 0.2 }}
+                    >
+                      <motion.div 
+                        className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-blue-400 via-blue-500 to-blue-400"
+                        layoutId="hoverUnderline"
+                      />
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </Link>
+            ))}
+          </div>
+
+          {/* Mobile menu button */}
+          <div className="md:hidden flex items-center">
+            <div className="relative z-50">
+              <Hamburger 
+                toggled={isMenuOpen} 
+                toggle={setIsMenuOpen} 
+                size={20} 
+                color="#60a5fa" 
+                rounded 
+              />
+            </div>
+          </div>
+        </div>
       </div>
 
+      {/* Mobile menu */}
       <AnimatePresence>
         {isMenuOpen && (
           <motion.div
             initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
+            animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
-            className="absolute top-full left-0 right-0 bg-black/90 backdrop-blur-lg border-b border-red-500/20 flex flex-col items-center sm:hidden z-40 overflow-hidden"
+            className="md:hidden bg-black/90 backdrop-blur-xl border-t border-blue-500/20"
           >
-            {pages.map((page) => (
-              <Link
-                key={page[0]}
-                to={page[0]}
-                className="w-full"
-                onClick={() => setIsMenuOpen(false)} 
-              >
-                <div className="relative py-4 px-6 text-gray-300 text-lg transition-all duration-300 hover:text-white hover:bg-red-900/20 border-b border-red-500/10 overflow-hidden">
-                  <div className="relative z-10 flex items-center font-spaceGrotesk tracking-wide">
-                    <div className="mr-3 text-red-500 opacity-70">
-                      {page[0] === "/" && <span className="text-xs">₿</span>}
-                      {page[0] === "/about" && <span className="text-xs">Ξ</span>}
-                      {page[0] === "/projects" && <span className="text-xs">◎</span>}
-                      {page[0] === "/achievements" && <span className="text-xs">✨</span>}
-                      {page[0] === "/contact" && <span className="text-xs">₮</span>}
+            <div className="px-2 pt-2 pb-3 space-y-1">
+              {pages.map((page, index) => (
+                <motion.div
+                  key={page.path}
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: index * 0.1 }}
+                >
+                  <Link
+                    to={page.path}
+                    className="block px-4 py-3 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-blue-600/20 transition-all duration-200"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    <div className="flex items-center space-x-3">
+                      <div className="text-blue-400">{page.icon}</div>
+                      <span>{page.label}</span>
                     </div>
-                    {page[1]}
-                  </div>
-                  
-                  <div className="absolute inset-0 opacity-10">
-                    <div className="absolute top-0 left-0 right-0 h-[1px] bg-red-500/40" />
-                    <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-red-500/40" />
-                    <div className="h-[1px] w-1/2 bg-red-500/40 absolute top-[50%] right-0" />
-                    <div className="w-[1px] h-1/2 bg-red-500/40 absolute left-[30%] top-0" />
-                  </div>
-                  
-                  <motion.div
-                    className="absolute inset-0 bg-gradient-to-r from-red-600/10 via-rose-600/10 to-red-600/10"
-                    initial={{ x: '-100%' }}
-                    whileHover={{ x: 0 }}
-                    transition={{ duration: 0.3 }}
-                  />
-                  <motion.div
-                    className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-red-500/40 via-rose-500/40 to-red-500/40"
-                    initial={{ scaleY: 0 }}
-                    whileHover={{ scaleY: 1 }}
-                    transition={{ duration: 0.2 }}
-                  />
-                </div>
-              </Link>
-            ))}
+                    <div className="mt-1 h-px bg-gradient-to-r from-transparent via-blue-500/30 to-transparent" />
+                  </Link>
+                </motion.div>
+              ))}
+            </div>
           </motion.div>
         )}
       </AnimatePresence>
-    </nav>
+    </motion.nav>
   );
 };
 

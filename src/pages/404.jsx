@@ -23,7 +23,7 @@ const NotFoundPage = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-400 via-rose-500 to-red-600 [text-shadow:_0_0_30px_rgb(239_68_68_/_0.3)]">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 [text-shadow:_0_0_30px_rgb(59_130_246_/_0.3)]">
                 <TypewriterText 
                   text="404" 
                   delay={0} 
@@ -33,7 +33,7 @@ const NotFoundPage = () => {
             </motion.h1>
 
             <motion.div
-              className="p-6 bg-black/30 rounded-xl border border-red-500/20 backdrop-blur-sm max-w-xl mx-auto mb-8"
+              className="p-6 bg-black/30 rounded-xl border border-blue-500/20 backdrop-blur-sm max-w-xl mx-auto mb-8"
               whileHover={{ scale: 1.02 }}
               transition={{ duration: 0.2 }}
             >
@@ -62,7 +62,7 @@ const NotFoundPage = () => {
                 className="relative"
               >
                 <motion.div
-                  className="absolute inset-0 bg-red-500/20 rounded-lg blur-md"
+                  className="absolute inset-0 bg-blue-500/20 rounded-lg blur-md"
                   animate={{
                     scale: [1, 1.2, 1],
                     opacity: [0.5, 0.3, 0.5],
@@ -75,7 +75,7 @@ const NotFoundPage = () => {
                 />
                 <Link to="/">
                   <motion.button
-                    className="relative px-6 py-3 text-base font-semibold text-white bg-red-600 rounded-lg shadow-lg hover:bg-red-500 transition-all duration-300 flex items-center gap-2"
+                    className="relative px-6 py-3 text-base font-semibold text-white bg-blue-600 rounded-lg shadow-lg hover:bg-blue-500 transition-all duration-300 flex items-center gap-2"
                     whileHover={{ scale: 1.05 }}
                   >
                     <span>Return Home</span>
@@ -97,7 +97,7 @@ const NotFoundPage = () => {
             </motion.div>
 
             <motion.div
-              className="absolute -bottom-4 -right-4 text-red-500/20 text-8xl pointer-events-none"
+              className="absolute -bottom-4 -right-4 text-blue-500/20 text-8xl pointer-events-none"
               animate={{
                 rotate: [0, 360],
                 scale: [1, 1.1, 1],
