@@ -32,7 +32,6 @@ const Navbar = () => {
 
   const pages = [
     ["/", "Home"],
-    ["/achievements", "Achievements"],
     ["/about", "About Me"],
     ["/projects", "Projects"],
     ["/contact", "Contact"],
@@ -55,8 +54,7 @@ const Navbar = () => {
           />
         </motion.div>
         <div className="font-spaceGrotesk font-bold text-xl sm:text-2xl tracking-wider">
-          <span className="text-white">JASONBALAYEV</span>
-          <span className="text-red-500">.DEV</span>
+                      <span className="text-white">EYESPYE</span>
         </div>
       </Link>
  
@@ -171,7 +169,6 @@ const Navbar = () => {
                       {page[0] === "/" && <span className="text-xs">₿</span>}
                       {page[0] === "/about" && <span className="text-xs">Ξ</span>}
                       {page[0] === "/projects" && <span className="text-xs">◎</span>}
-                      {page[0] === "/achievements" && <span className="text-xs">✨</span>}
                       {page[0] === "/contact" && <span className="text-xs">₮</span>}
                     </div>
                     {page[1]}

@@ -3,8 +3,8 @@
  */
 module.exports = {
   siteMetadata: {
-    title: `My Portfolio`,
-    siteUrl: `https://jasonbalayev.dev`,
+    title: `EYESPYE`,
+    siteUrl: `https://eyespye.dev`,
   },
   plugins: [
     "gatsby-plugin-postcss",
